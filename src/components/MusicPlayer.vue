@@ -1,20 +1,24 @@
 <template>
   <div class="music-player">
-    <button @click="togglePlay" class="play-btn" :class="{ playing: isPlaying }">
-      <svg v-if="!isPlaying" class="icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-      <svg v-else class="icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+    <button @click="openPlayer" class="play-btn" :class="{ playing: isPlaying }">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
       </svg>
     </button>
     <div class="music-info" v-if="isPlaying">
       <span class="music-note">♪</span>
-      <span class="music-text">{{ currentSong }}</span>
+      <span class="music-text">网易云歌单</span>
     </div>
-    <audio ref="audio" @ended="nextSong" @play="isPlaying = true" @pause="isPlaying = false">
-      <source :src="songs[currentIndex].url" type="audio/mpeg" />
-    </audio>
+    <!-- 隐藏的网易云 iframe -->
+    <iframe 
+      v-if="isPlaying"
+      ref="player"
+      :src="playerUrl"
+      width="1" 
+      height="1" 
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
   </div>
 </template>
 
@@ -24,31 +28,17 @@ export default {
   data() {
     return {
       isPlaying: false,
-      currentIndex: 0,
-      currentSong: '轻音乐',
-      songs: [
-        { name: '轻音乐 1', url: 'https://music.163.com/song/media/outer/url?id=1825771038.mp3' },
-        { name: '轻音乐 2', url: 'https://music.163.com/song/media/outer/url?id=1901603143.mp3' },
-        { name: '轻音乐 3', url: 'https://music.163.com/song/media/outer/url?id=1863089996.mp3' },
-        { name: '轻音乐 4', url: 'https://music.163.com/song/media/outer/url?id=1863090001.mp3' },
-      ]
+      playlistId: '2355066086',
+      playerUrl: ''
     }
   },
   methods: {
-    togglePlay() {
-      const audio = this.$refs.audio
-      if (this.isPlaying) {
-        audio.pause()
-      } else {
-        audio.play().catch(e => console.log('播放失败:', e))
+    openPlayer() {
+      if (!this.isPlaying) {
+        // 打开网易云歌单页面
+        window.open(`https://music.163.com/playlist?id=${this.playlistId}`, '_blank')
+        this.isPlaying = true
       }
-    },
-    nextSong() {
-      this.currentIndex = (this.currentIndex + 1) % this.songs.length
-      this.currentSong = this.songs[this.currentIndex].name
-      this.$nextTick(() => {
-        this.$refs.audio.play()
-      })
     }
   }
 }
@@ -88,6 +78,7 @@ export default {
 .play-btn.playing {
   background: linear-gradient(135deg, #ec4141 0%, #c32727 100%);
   border-color: transparent;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .play-btn.playing .icon {
@@ -122,6 +113,17 @@ export default {
   font-size: 12px;
   color: #666;
   font-weight: 500;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(236, 65, 65, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(236, 65, 65, 0.5);
+  }
 }
 
 @keyframes bounce {
