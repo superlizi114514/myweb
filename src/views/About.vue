@@ -9,7 +9,7 @@
     <!-- Profile Image -->
     <div class="flex justify-center mb-12">
       <div class="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 p-1 shadow-lg">
-        <img src="/avatar.jpg" alt="Profile" class="w-full h-full rounded-full object-cover bg-white" />
+        <img src="/avatar.jpg" alt="Profile" class="w-full h-full rounded-full object-cover bg-white" loading="eager" fetchpriority="high" />
       </div>
     </div>
 
