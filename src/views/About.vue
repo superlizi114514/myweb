@@ -3,8 +3,8 @@
     <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Hero -->
       <div class="text-center mb-16">
-        <h1 class="text-5xl font-bold text-apple-gray-900 mb-6">About Me</h1>
-        <p class="text-xl text-apple-gray-500">AI 技术探索者 · 山东 · 中国</p>
+        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-6">About Me</h1>
+        <p class="text-xl text-white font-medium">AI 技术探索者 · 山东 · 中国</p>
       </div>
 
       <!-- Profile Image -->
@@ -16,14 +16,14 @@
 
       <!-- Story -->
       <div class="prose prose-lg max-w-none mb-16">
-        <p class="text-apple-gray-600 leading-relaxed">
+        <p class="text-white leading-relaxed text-lg">
           你好！我是栗子，一名 AI 技术探索者，位于中国山东。我专注于学习和实践前沿 AI 技术，
           致力于将 AI 能力与实际应用相结合。
         </p>
-        <p class="text-apple-gray-600 leading-relaxed">
+        <p class="text-white leading-relaxed text-lg">
           目前主要研究 OpenClaw 等 AI 代理框架的部署与应用，探索 AI 在日常工作和生活中的无限可能。
         </p>
-        <p class="text-apple-gray-600 leading-relaxed">
+        <p class="text-white leading-relaxed text-lg">
           我相信 AI 将改变世界，希望与志同道合的伙伴一起探索这个令人兴奋的新领域。
         </p>
       </div>
@@ -32,12 +32,12 @@
       <div class="mb-16">
         <h2 class="text-2xl font-bold text-white mb-8">Experience</h2>
         <div class="space-y-8">
-          <div v-for="(item, index) in timeline" :key="index" class="relative pl-8 border-l-2 border-apple-gray-200">
-            <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-apple-gray-900"></div>
-            <div class="mb-1 text-sm text-apple-gray-500">{{ item.period }}</div>
-            <h3 class="text-lg font-semibold text-apple-gray-900">{{ item.role }}</h3>
-            <p class="text-apple-gray-600">{{ item.company }}</p>
-            <p class="text-apple-gray-500 text-sm mt-2">{{ item.description }}</p>
+          <div v-for="(item, index) in timeline" :key="index" class="relative pl-8 border-l-2 border-purple-500/30">
+            <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+            <div class="mb-1 text-sm text-purple-400 font-medium">{{ item.period }}</div>
+            <h3 class="text-lg font-semibold text-white">{{ item.role }}</h3>
+            <p class="text-gray-300">{{ item.company }}</p>
+            <p class="text-gray-400 text-sm mt-2">{{ item.description }}</p>
           </div>
         </div>
       </div>
@@ -113,22 +113,6 @@ export default {
   min-height: 100vh;
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2a2a3e 100%);
   animation: fadeIn 0.5s ease;
-  position: relative;
-}
-
-/* 背景弹幕容器 */
-.about-page::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 @keyframes fadeIn {
@@ -140,19 +124,5 @@ export default {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* 内容区域添加半透明背景 */
-.about-page > div {
-  position: relative;
-  z-index: 1;
-}
-
-.about-page > div > .max-w-4xl {
-  background: rgba(26, 26, 46, 0.8);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 64px 48px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 </style>
