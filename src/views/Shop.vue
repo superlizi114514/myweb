@@ -45,8 +45,8 @@
               购买 ▼
             </button>
             <div v-if="showBuyOptions" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-white/10">
-              <a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
-                💬 QQ 联系
+              <router-link to="/contact-info" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
+                📱 联系方式
               </a>
               <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">
                 🐟 闲鱼主页
@@ -90,8 +90,8 @@
               购买 ▼
             </button>
             <div v-if="showBuyOptions2" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-white/10">
-              <a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
-                💬 QQ 联系
+              <router-link to="/contact-info" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
+                📱 联系方式
               </a>
               <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">
                 🐟 闲鱼主页
@@ -132,8 +132,8 @@
               购买 ▼
             </button>
             <div v-if="showBuyOptions3" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-white/10">
-              <a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
-                💬 QQ 联系
+              <router-link to="/contact-info" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
+                📱 联系方式
               </a>
               <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">
                 🐟 闲鱼主页
