@@ -5,6 +5,7 @@ import Projects from './views/Projects.vue'
 import Blog from './views/Blog.vue'
 import Contact from './views/Contact.vue'
 import OpenClawDeploy from './views/OpenClawDeploy.vue'
+import WebsiteBuild from './views/WebsiteBuild.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -13,6 +14,7 @@ const routes = [
   { path: '/blog', name: 'Blog', component: Blog },
   { path: '/contact', name: 'Contact', component: Contact },
   { path: '/openclaw-deploy', name: 'OpenClawDeploy', component: OpenClawDeploy },
+  { path: '/website-build', name: 'WebsiteBuild', component: WebsiteBuild },
 ]
 
 const router = createRouter({

@@ -47,9 +47,9 @@
         <h2 class="text-2xl font-bold text-white mb-8">Skills</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div v-for="(category, catIndex) in skillsCategories" :key="catIndex">
-            <h3 class="text-sm font-semibold text-apple-gray-900 mb-4 uppercase tracking-wide">{{ category.name }}</h3>
+            <h3 class="text-sm font-semibold text-purple-400 mb-4 uppercase tracking-wide">{{ category.name }}</h3>
             <div class="flex flex-wrap gap-2">
-              <span v-for="skill in category.skills" :key="skill" class="bg-apple-gray-100 px-4 py-2 rounded-lg text-sm text-apple-gray-700">
+              <span v-for="skill in category.skills" :key="skill" class="bg-gradient-to-r from-[#2a2a3e] to-[#1a1a2e] px-4 py-2 rounded-lg text-sm text-white border border-purple-500/30 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/20 transition-all">
                 {{ skill }}
               </span>
             </div>

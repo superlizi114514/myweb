@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen" :class="pageClass">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-white/10">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#05050a]/95 backdrop-blur-xl border-b border-purple-500/20">
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-14">
           <router-link to="/" class="text-white font-bold text-lg hover:text-purple-400 transition-colors">

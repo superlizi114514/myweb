@@ -3,8 +3,8 @@
     <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="text-center mb-16">
-        <h1 class="text-5xl font-bold text-apple-gray-900 mb-6">Blog</h1>
-        <p class="text-xl text-apple-gray-500">Thoughts, tutorials, and insights</p>
+        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-6">Blog</h1>
+        <p class="text-xl text-gray-400">Thoughts, tutorials, and insights</p>
       </div>
 
       <!-- Posts List -->
@@ -12,15 +12,15 @@
         <article v-for="post in posts" :key="post.id" class="group cursor-pointer">
           <div class="flex flex-col md:flex-row gap-6 items-start">
             <div class="w-full md:w-64 flex-shrink-0">
-              <div class="bg-apple-gray-50 rounded-xl overflow-hidden aspect-[16/10]">
+              <div class="bg-[#1a1a2e] rounded-xl overflow-hidden aspect-[16/10] border border-white/10">
                 <img :src="post.image" :alt="post.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs text-blue-500 font-medium">{{ post.category }}</span>
-                <span class="text-xs text-apple-gray-400">•</span>
-                <span class="text-xs text-apple-gray-400">{{ post.date }}</span>
+                <span class="text-xs text-purple-400 font-medium">{{ post.category }}</span>
+                <span class="text-xs text-gray-500">•</span>
+                <span class="text-xs text-gray-400">{{ post.date }}</span>
               </div>
               <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                 {{ post.title }}
