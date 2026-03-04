@@ -40,8 +40,8 @@
               <span>后台管理系统</span>
             </li>
           </ul>
-          <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block w-full py-3 px-6 bg-purple-600 text-white text-center font-semibold rounded-xl hover:bg-purple-700 transition-colors">
-            闲鱼购买 →
+          <div class="relative"><button @click="showBuyOptions = !showBuyOptions" class="block w-full py-3 px-6 bg-purple-600 text-white text-center font-semibold rounded-xl hover:bg-purple-700 transition-colors">购买 ▼</button><div v-if="showBuyOptions" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden"><a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">QQ 联系</a><a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">闲鱼主页</a></div></div>
+            购买 
           </a>
         </div>
 
@@ -75,8 +75,8 @@
               <span>代码优化与重构</span>
             </li>
           </ul>
-          <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block w-full py-3 px-6 bg-blue-600 text-white text-center font-semibold rounded-xl hover:bg-blue-700 transition-colors">
-            闲鱼购买 →
+          <div class="relative"><button @click="showBuyOptions2 = !showBuyOptions2" class="block w-full py-3 px-6 bg-blue-600 text-white text-center font-semibold rounded-xl hover:bg-blue-700 transition-colors">购买 ▼</button><div v-if="showBuyOptions2" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden"><a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">QQ 联系</a><a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">闲鱼主页</a></div></div>
+            购买 
           </a>
         </div>
 
@@ -108,8 +108,8 @@
             </li>
           </ul>
           <div class="space-y-3">
-            <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block w-full py-3 px-6 bg-green-600 text-white text-center font-semibold rounded-xl hover:bg-green-700 transition-colors">
-              闲鱼购买 →
+            <div class="relative"><button @click="showBuyOptions3 = !showBuyOptions3" class="block w-full py-3 px-6 bg-green-600 text-white text-center font-semibold rounded-xl hover:bg-green-700 transition-colors">购买 ▼</button><div v-if="showBuyOptions3" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden"><a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">QQ 联系</a><a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">闲鱼主页</a></div></div>
+              购买 
             </a>
             <p class="text-center text-gray-500 text-sm">或添加微信咨询</p>
           </div>
@@ -131,6 +131,14 @@
 
 <script>
 export default {
+  data() {
+    return {
+      showBuyOptions: false,
+      showBuyOptions2: false,
+      showBuyOptions3: false
+    }
+  },
+
   name: 'Shop'
 }
 </script>
