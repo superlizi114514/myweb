@@ -12,7 +12,7 @@
       <span class="music-note">♪</span>
       <span class="music-text">正在播放</span>
     </div>
-    <audio ref="audio" :src="audioUrl" loop @play="isPlaying = true" @pause="isPlaying = false"></audio>
+    <audio ref="audio" :src="songs[currentIndex].url" @ended="nextSong" @play="isPlaying = true" @pause="isPlaying = false"></audio>
   </div>
 </template>
 
@@ -22,7 +22,12 @@ export default {
   data() {
     return {
       isPlaying: false,
-      audioUrl: '/music.mp3'
+      currentIndex: 0,
+      songs: [
+        { name: 'Music 1', url: '/music1.mp3' },
+        { name: 'Music 2', url: '/music2.mp3' },
+        { name: 'Music 3', url: '/music.mp3' },
+      ]
     }
   },
   methods: {
@@ -33,6 +38,12 @@ export default {
       } else {
         audio.play().catch(e => console.log('播放失败:', e))
       }
+    },
+    nextSong() {
+      this.currentIndex = (this.currentIndex + 1) % this.songs.length
+      this.$nextTick(() => {
+        this.$refs.audio.play()
+      })
     }
   }
 }

@@ -1,12 +1,13 @@
 <template>
-  <div class="max-w-5xl mx-auto px-6 py-24">
-    <!-- Header -->
-    <div class="text-center mb-16">
-      <h1 class="text-5xl font-bold text-apple-gray-900 mb-6">Projects</h1>
-      <p class="text-xl text-apple-gray-500">A collection of my recent work</p>
-    </div>
+  <div class="projects-page">
+    <div class="max-w-5xl mx-auto px-6 py-24">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold text-white mb-6">Projects</h1>
+        <p class="text-xl text-gray-400">A collection of my recent work</p>
+      </div>
 
-    <!-- Filter -->
+      <!-- Filter -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
       <button 
         v-for="filter in filters" 
@@ -26,20 +27,21 @@
     <!-- Projects Grid -->
     <div class="grid md:grid-cols-2 gap-8">
       <div v-for="project in filteredProjects" :key="project.id" class="group cursor-pointer">
-        <div class="bg-apple-gray-50 rounded-2xl overflow-hidden aspect-[4/3] mb-4">
+        <div class="bg-[#1a1a2e] rounded-2xl overflow-hidden aspect-[4/3] mb-4 border border-white/10 hover:border-purple-500/50 transition-all">
           <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
         <div class="flex items-center gap-2 mb-2">
-          <span v-for="tag in project.tags" :key="tag" class="text-xs text-apple-gray-500 bg-apple-gray-100 px-3 py-1 rounded-full">
+          <span v-for="tag in project.tags" :key="tag" class="text-xs text-gray-400 bg-[#2a2a3e] px-3 py-1 rounded-full border border-white/10">
             {{ tag }}
           </span>
         </div>
-        <h3 class="text-xl font-semibold text-apple-gray-900 mb-2">{{ project.title }}</h3>
-        <p class="text-apple-gray-500">{{ project.description }}</p>
-        <a :href="project.link" target="_blank" class="inline-flex items-center mt-4 text-blue-500 hover:text-blue-600 text-sm font-medium transition-colors">
+        <h3 class="text-xl font-semibold text-white mb-2">{{ project.title }}</h3>
+        <p class="text-gray-400">{{ project.description }}</p>
+        <a :href="project.link" target="_blank" class="inline-flex items-center mt-4 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors">
           View Project →
         </a>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -92,3 +94,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.projects-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
+}
+</style>
