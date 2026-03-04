@@ -137,7 +137,7 @@ export default {
 
 <style scoped>
 .shop-page {
-  background: white;
+  background: transparent;
 }
 
 .service-card:hover {
