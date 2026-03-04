@@ -3,15 +3,15 @@
     <div v-for="(row, rowIndex) in rows" :key="rowIndex" 
          class="tag-row"
          :style="{ 
-           top: `${rowIndex * (100 / rows.length)}%`,
-           animationDelay: `${rowIndex * -2}s`,
+           top: `${rowIndex * 25}%`,
+           animationDelay: `${rowIndex * -15}s`,
            animationDirection: rowIndex % 2 === 0 ? 'normal' : 'reverse'
          }">
-      <span v-for="(tag, tagIndex) in extendedTags" 
-            :key="`${rowIndex}-${tagIndex}`"
-            class="floating-tag"
-            :style="{ animationDelay: `${tagIndex * 0.5}s` }">
+      <span v-for="(tag, index) in extendedTags" 
+            :key="`${rowIndex}-${index}`"
+            class="floating-tag">
         {{ tag }}
+        <span class="tag-separator">/</span>
       </span>
     </div>
   </div>
@@ -42,8 +42,8 @@ export default {
   },
   computed: {
     extendedTags() {
-      // 重复标签以填满整行
-      return [...this.tags, ...this.tags, ...this.tags]
+      // 重复标签以填满整行，确保动画无缝
+      return [...this.tags, ...this.tags]
     }
   }
 }
@@ -59,30 +59,37 @@ export default {
   pointer-events: none;
   overflow: hidden;
   z-index: 0;
-  opacity: 0.6;
 }
 
 .tag-row {
   position: absolute;
   left: 0;
-  width: 100%;
+  width: max-content;
   display: flex;
   align-items: center;
   white-space: nowrap;
-  animation: scroll-left 60s linear infinite;
+  animation: scroll-left 80s linear infinite;
+  will-change: transform;
 }
 
 .floating-tag {
-  display: inline-block;
-  padding: 6px 16px;
-  margin: 0 20px;
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.15);
-  border-radius: 20px;
-  font-size: 13px;
-  color: rgba(99, 102, 241, 0.6);
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  margin: 0 12px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 24px;
+  font-size: 14px;
+  color: rgba(99, 102, 241, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+
+.tag-separator {
+  margin-left: 12px;
+  color: rgba(99, 102, 241, 0.4);
+  font-weight: 300;
 }
 
 @keyframes scroll-left {
@@ -94,24 +101,20 @@ export default {
   }
 }
 
-/* 不同行的变化 */
-.tag-row:nth-child(1) .floating-tag {
-  font-size: 12px;
-  opacity: 0.5;
+/* 不同行的变化和可见性增强 */
+.tag-row:nth-child(1) {
+  top: 10% !important;
 }
 
-.tag-row:nth-child(2) .floating-tag {
-  font-size: 14px;
-  opacity: 0.6;
+.tag-row:nth-child(2) {
+  top: 35% !important;
 }
 
-.tag-row:nth-child(3) .floating-tag {
-  font-size: 13px;
-  opacity: 0.4;
+.tag-row:nth-child(3) {
+  top: 60% !important;
 }
 
-.tag-row:nth-child(4) .floating-tag {
-  font-size: 15px;
-  opacity: 0.5;
+.tag-row:nth-child(4) {
+  top: 85% !important;
 }
 </style>
