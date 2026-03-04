@@ -18,7 +18,7 @@
             <router-link to="/blog" class="text-gray-300 text-sm hover:text-white hover:scale-105 hover:text-purple-400 transition-all duration-300">
               Blog
             </router-link>
-            <router-link to="/contact" class="text-gray-300 text-sm hover:text-white hover:scale-105 hover:text-purple-400 transition-all duration-300">
+            <router-link to="/shop" class="text-gray-300 text-sm hover:text-white hover:scale-105 hover:text-purple-400 transition-all duration-300">
               Shop
             </router-link>
           </div>
