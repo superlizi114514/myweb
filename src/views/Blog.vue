@@ -47,10 +47,19 @@ export default {
       posts: [
         {
           id: 1,
+          title: '个人网站搭建全记录',
+          excerpt: '使用 OpenClaw + 千问 3.5Plus，从零开始搭建深色科技风个人网站。包含完整的需求分析、设计决策、代码实现和部署流程。',
+          category: '开发记录',
+          date: 'Mar 4, 2024',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop',
+          link: '/website-build'
+        },
+        {
+          id: 2,
           title: 'VPS 部署 OpenClaw 完整教程',
           excerpt: '阿里云学生机 9.9 元/月 + Coding Plan 7 元/月，总费用 17 元/月的 AI 代理部署方案。详细步骤、命令和常见问题解答。',
           category: 'AI 教程',
-          date: 'Mar 4, 2024',
+          date: 'Mar 1, 2024',
           image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop',
           link: '/openclaw-deploy'
         },
