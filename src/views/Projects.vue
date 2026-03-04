@@ -63,6 +63,15 @@ export default {
           category: 'AI',
           link: '/openclaw-deploy'
         },
+        { 
+          id: 2, 
+          title: '个人网站搭建全记录', 
+          description: '从零开始搭建深色科技风个人网站，包含 OpenClaw + 千问 3.5Plus 完整开发过程', 
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+          tags: ['Vue.js', 'OpenClaw', 'Qwen3.5', 'GitHub Pages'],
+          category: 'Web',
+          link: '/website-build'
+        },
 
       ]
     }
