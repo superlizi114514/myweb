@@ -1,22 +1,37 @@
 <template>
   <div class="min-h-screen" :class="pageClass">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#05050a]/95 backdrop-blur-xl border-b border-purple-500/20">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="flex items-center justify-between h-14">
-          <router-link to="/" class="text-white font-bold text-lg hover:text-purple-400 hover:scale-105 transition-all duration-200">
-            栗子<span class="text-purple-400">.dev</span>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0a0a0f]/95 via-[#1a1a2e]/95 to-[#0a0a0f]/95 backdrop-blur-xl border-b border-purple-500/30 shadow-lg shadow-purple-500/10">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+          <router-link to="/" class="group flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg shadow-purple-500/30">
+              <span class="text-white font-bold text-lg">栗</span>
+            </div>
+            <div class="hidden sm:block">
+              <div class="text-white font-bold text-lg leading-tight">栗子<span class="text-purple-400">.dev</span></div>
+              <div class="text-gray-500 text-xs">AI Developer</div>
+            </div>
           </router-link>
           
-          <div class="hidden md:flex items-center space-x-8">
+          <div class="hidden md:flex items-center space-x-2">
             <router-link to="/about" class="nav-link">
-              About
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+              <span>About</span>
             </router-link>
             <router-link to="/projects" class="nav-link">
-              Projects
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+              <span>Projects</span>
             </router-link>
             <router-link to="/shop" class="nav-link">
-              Shop
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+              <span>Shop</span>
             </router-link>
           </div>
           
@@ -31,15 +46,24 @@
         
         <!-- Mobile Menu -->
         <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-white/10">
-          <div class="flex flex-col space-y-4">
-            <router-link to="/about" @click="mobileMenuOpen = false" class="nav-link">
-              About
+          <div class="flex flex-col space-y-3">
+            <router-link to="/about" @click="mobileMenuOpen = false" class="mobile-nav-link">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+              <span>About</span>
             </router-link>
-            <router-link to="/projects" @click="mobileMenuOpen = false" class="nav-link">
-              Projects
+            <router-link to="/projects" @click="mobileMenuOpen = false" class="mobile-nav-link">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+              <span>Projects</span>
             </router-link>
-            <router-link to="/shop" @click="mobileMenuOpen = false" class="nav-link">
-              Shop
+            <router-link to="/shop" @click="mobileMenuOpen = false" class="mobile-nav-link">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+              <span>Shop</span>
             </router-link>
           </div>
         </div>
@@ -80,32 +104,96 @@
 
 /* 导航链接悬停效果 */
 .nav-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #9ca3af;
   font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .nav-link:hover {
   color: #ffffff;
-  transform: scale(1.15);
+  background: rgba(139, 92, 246, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+.nav-link svg {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover svg {
+  transform: scale(1.1) rotate(-5deg);
+  color: #a78bfa;
+}
+
+.nav-link span {
+  position: relative;
+  z-index: 1;
+}
+
+/* 移动端导航 */
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #9ca3af;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #ffffff;
+  background: rgba(139, 92, 246, 0.15);
+  transform: translateX(8px);
+}
+
+.mobile-nav-link svg {
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover svg {
+  color: #a78bfa;
+  transform: scale(1.1);
 }
 
 /* 手机端优化 */
 @media (max-width: 768px) {
-  :deep(.max-w-5xl) {
+  :deep(.max-w-6xl) {
     padding-left: 20px;
     padding-right: 20px;
   }
   
-  :deep(nav .max-w-5xl) {
+  :deep(nav .max-w-6xl) {
     padding-left: 16px;
     padding-right: 16px;
-  }
-  
-  .nav-link {
-    font-size: 1rem;
   }
 }
 </style>
