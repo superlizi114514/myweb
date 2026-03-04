@@ -5,9 +5,7 @@
       <div class="max-w-4xl mx-auto px-6 text-center py-32">
         <!-- Avatar -->
         <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 shadow-lg">
-          <div class="w-full h-full rounded-full bg-white flex items-center justify-center text-4xl">
-            🌰
-          </div>
+          <img src="/avatar.jpg" alt="Avatar" class="w-full h-full rounded-full object-cover bg-white" />
         </div>
         
         <h1 class="text-5xl md:text-6xl font-bold mb-6 text-apple-gray-900">
