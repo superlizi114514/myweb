@@ -4,18 +4,18 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-[#05050a]/95 backdrop-blur-xl border-b border-purple-500/20">
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-14">
-          <router-link to="/" class="text-white font-bold text-lg hover:text-purple-400 transition-colors">
+          <router-link to="/" class="text-white font-bold text-lg hover:text-purple-400 hover:scale-105 transition-all duration-200">
             栗子<span class="text-purple-400">.dev</span>
           </router-link>
           
           <div class="hidden md:flex items-center space-x-6">
-            <router-link to="/about" class="text-gray-400 text-sm hover:text-white transition-colors">
+            <router-link to="/about" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200">
               About
             </router-link>
-            <router-link to="/projects" class="text-gray-400 text-sm hover:text-white transition-colors">
+            <router-link to="/projects" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200">
               Projects
             </router-link>
-            <router-link to="/blog" class="text-gray-400 text-sm hover:text-white transition-colors">
+            <router-link to="/blog" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200">
               Blog
             </router-link>
           </div>
