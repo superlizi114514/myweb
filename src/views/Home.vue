@@ -11,16 +11,21 @@
           <img src="/avatar.jpg" alt="Avatar" class="w-full h-full rounded-full object-cover bg-white" loading="eager" fetchpriority="high" />
         </div>
         
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-apple-gray-900">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
           <TypewriterText 
             text="Hello, I'm 栗子" 
             :speed="150" 
             :startDelay="300"
           />
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.5s">
-          正在学习前沿 AI，探索技术与创意的交汇点
-        </p>
+        <div class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed min-h-[3rem]">
+          <TypewriterText 
+            v-if="showWelcome"
+            text="这里是我的空间 我将向你展示我的全部 欢迎志同道合的朋友" 
+            :speed="100" 
+            :startDelay="2000"
+          />
+        </div>
         <div class="flex items-center justify-center space-x-4">
           <router-link to="/projects" class="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2">
             <span>View My Work</span>
@@ -100,6 +105,7 @@ export default {
   },
   data() {
     return {
+      showWelcome: true,
       featuredProjects: [
         { 
           id: 1, 

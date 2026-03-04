@@ -93,6 +93,58 @@
   </div>
 </template>
 
+<style>
+/* 全局导航样式 - 使用非 scoped 确保生效 */
+.nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: #9ca3af !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2) !important;
+}
+
+.nav-link svg {
+  transition: all 0.3s ease !important;
+}
+
+.nav-link:hover svg {
+  transform: scale(1.1) !important;
+  color: #a78bfa !important;
+}
+
+.mobile-nav-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  color: #9ca3af !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.mobile-nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+  transform: translateX(8px) !important;
+}
+</style>
+
 <style scoped>
 .home-page {
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
@@ -100,88 +152,6 @@
 
 .default-page {
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2a2a3e 100%);
-}
-
-/* 导航链接悬停效果 */
-.nav-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #9ca3af;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #ffffff;
-  background: rgba(139, 92, 246, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-}
-
-.nav-link:hover::before {
-  opacity: 1;
-}
-
-.nav-link svg {
-  position: relative;
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover svg {
-  transform: scale(1.1) rotate(-5deg);
-  color: #a78bfa;
-}
-
-.nav-link span {
-  position: relative;
-  z-index: 1;
-}
-
-/* 移动端导航 */
-.mobile-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #9ca3af;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.mobile-nav-link:hover {
-  color: #ffffff;
-  background: rgba(139, 92, 246, 0.15);
-  transform: translateX(8px);
-}
-
-.mobile-nav-link svg {
-  transition: all 0.3s ease;
-}
-
-.mobile-nav-link:hover svg {
-  color: #a78bfa;
-  transform: scale(1.1);
 }
 
 /* 手机端优化 */
