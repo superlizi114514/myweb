@@ -1,44 +1,30 @@
 <template>
   <div class="music-player">
-    <button @click="togglePlay" class="play-btn" :class="{ playing: isPlaying }">
-      <svg v-if="!isPlaying" class="icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-      <svg v-else class="icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+    <button @click="openPlaylist" class="play-btn" :class="{ playing: isPlaying }">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
       </svg>
     </button>
     <div class="music-info" v-if="isPlaying">
       <span class="music-note">♪</span>
-      <span class="music-text">Now Playing</span>
+      <span class="music-text">网易云音乐</span>
     </div>
-    <audio ref="audio" :src="musicSrc" loop @ended="isPlaying = false"></audio>
   </div>
 </template>
 
 <script>
 export default {
   name: 'MusicPlayer',
-  props: {
-    musicSrc: {
-      type: String,
-      default: 'https://music.163.com/song/media/outer/url?id=1825771038.mp3'
-    }
-  },
   data() {
     return {
-      isPlaying: false
+      isPlaying: false,
+      playlistUrl: 'https://music.163.com/playlist?id=2355066086&userid=1548234920'
     }
   },
   methods: {
-    togglePlay() {
-      const audio = this.$refs.audio
-      if (this.isPlaying) {
-        audio.pause()
-      } else {
-        audio.play().catch(e => console.log('播放失败:', e))
-      }
-      this.isPlaying = !this.isPlaying
+    openPlaylist() {
+      window.open(this.playlistUrl, '_blank')
+      this.isPlaying = true
     }
   }
 }
@@ -76,13 +62,12 @@ export default {
 }
 
 .play-btn.playing {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ec4141 0%, #c32727 100%);
   border-color: transparent;
 }
 
 .play-btn.playing .icon {
   color: white;
-  animation: pulse 1s ease-in-out infinite;
 }
 
 .icon {
@@ -105,7 +90,7 @@ export default {
 
 .music-note {
   font-size: 16px;
-  color: #667eea;
+  color: #ec4141;
   animation: bounce 0.5s ease infinite;
 }
 
@@ -113,11 +98,6 @@ export default {
   font-size: 12px;
   color: #666;
   font-weight: 500;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
 }
 
 @keyframes bounce {
