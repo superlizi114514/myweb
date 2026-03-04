@@ -32,8 +32,8 @@
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
             <span>抖音</span>
           </a>
-          <router-link to="/contact" class="bg-white text-apple-gray-900 px-8 py-3 rounded-full text-sm font-medium border border-apple-gray-200 hover:border-apple-gray-400 hover:shadow-md transition-all">
-            Get in Touch
+          <router-link to="/about" class="bg-white text-apple-gray-900 px-8 py-3 rounded-full text-sm font-medium border border-apple-gray-200 hover:border-apple-gray-400 hover:shadow-md transition-all">
+            About Me
           </router-link>
         </div>
 
@@ -131,14 +131,8 @@ export default {
 
 /* 头像预加载动画 */
 .hero-section img {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1s ease-in-out;
-}
-
-@keyframes loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  content-visibility: auto;
+  contain-intrinsic-size: 128px;
 }
 
 .hero-section {
