@@ -63,24 +63,7 @@ export default {
           category: 'AI',
           link: '/openclaw-deploy'
         },
-        { 
-          id: 2, 
-          title: 'AI Agent 开发', 
-          description: '基于 OpenClaw 开发自定义 AI Agent，实现自动化任务处理', 
-          image: 'https://images.unsplash.com/photo-1676277791608-2d929d4b954f?w=800&h=600&fit=crop',
-          tags: ['AI Agent', 'Node.js', 'Automation'],
-          category: 'AI',
-          link: '#'
-        },
-        { 
-          id: 3, 
-          title: '个人作品集网站', 
-          description: '深色科技风的 Vue 3 个人网站，展示项目与技能', 
-          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-          tags: ['Vue.js', 'Vercel', 'Tailwind'],
-          category: 'Web',
-          link: '#'
-        },
+
       ]
     }
   },

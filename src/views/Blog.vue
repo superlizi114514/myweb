@@ -1,5 +1,6 @@
 <template>
-  <div class="max-w-4xl mx-auto px-6 py-24">
+  <div class="blog-page">
+    <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl font-bold text-apple-gray-900 mb-6">Blog</h1>
@@ -21,13 +22,13 @@
                 <span class="text-xs text-apple-gray-400">•</span>
                 <span class="text-xs text-apple-gray-400">{{ post.date }}</span>
               </div>
-              <h2 class="text-2xl font-bold text-apple-gray-900 mb-3 group-hover:text-blue-500 transition-colors">
+              <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                 {{ post.title }}
               </h2>
-              <p class="text-apple-gray-500 mb-4">{{ post.excerpt }}</p>
-              <span class="text-blue-500 hover:text-blue-600 text-sm font-medium transition-colors">
-                Read more →
-              </span>
+              <p class="text-gray-400 mb-4">{{ post.excerpt }}</p>
+              <router-link :to="post.link || '#'" class="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors">
+                阅读全文 →
+              </router-link>
             </div>
           </div>
         </article>
@@ -48,6 +49,7 @@
           Next
         </button>
       </div>
+    </div>
   </div>
 </template>
 
@@ -59,27 +61,12 @@ export default {
       posts: [
         {
           id: 1,
-          title: 'OpenClaw AI 代理入门教程',
-          excerpt: '从零开始学习如何部署和配置 OpenClaw AI 代理框架，实现自动化任务处理。',
+          title: 'VPS 部署 OpenClaw 完整教程',
+          excerpt: '阿里云学生机 9.9 元/月 + Coding Plan 7 元/月，总费用 17 元/月的 AI 代理部署方案。详细步骤、命令和常见问题解答。',
           category: 'AI 教程',
-          date: 'Mar 1, 2024',
-          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop'
-        },
-        {
-          id: 2,
-          title: 'AI Agent 应用场景分享',
-          excerpt: '探索 AI Agent 在实际工作和生活中的应用场景，提升效率的实用技巧。',
-          category: 'AI 应用',
-          date: 'Feb 25, 2024',
-          image: 'https://images.unsplash.com/photo-1676277791608-2d929d4b954f?w=400&h=250&fit=crop'
-        },
-        {
-          id: 3,
-          title: 'Vue 3 性能优化实践',
-          excerpt: '分享 Vue 3 项目性能优化的实战经验和最佳实践。',
-          category: '开发技巧',
-          date: 'Feb 20, 2024',
-          image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop'
+          date: 'Mar 4, 2024',
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop',
+          link: '/openclaw-deploy'
         },
       ]
     }
