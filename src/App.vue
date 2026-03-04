@@ -9,16 +9,16 @@
           </router-link>
           
           <div class="flex items-center space-x-6">
-            <router-link to="/about" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 transition-colors">
+            <router-link to="/about" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 hover:scale-110 transition-all duration-200">
               About
             </router-link>
-            <router-link to="/projects" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 transition-colors">
+            <router-link to="/projects" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 hover:scale-110 transition-all duration-200">
               Projects
             </router-link>
-            <router-link to="/blog" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 transition-colors">
+            <router-link to="/blog" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 hover:scale-110 transition-all duration-200">
               Blog
             </router-link>
-            <router-link to="/contact" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 transition-colors">
+            <router-link to="/contact" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 hover:scale-110 transition-all duration-200">
               Shop
             </router-link>
           </div>

@@ -1,10 +1,10 @@
 <template>
-  <div class="blog-page">
+  <div class="blog-page bg-white min-h-screen">
     <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="text-center mb-16">
-        <h1 class="text-5xl font-bold text-white mb-6">Blog</h1>
-        <p class="text-xl text-gray-400">Thoughts, tutorials, and insights</p>
+        <h1 class="text-5xl font-bold text-gray-900 mb-6">Blog</h1>
+        <p class="text-xl text-gray-600">Thoughts, tutorials, and insights</p>
       </div>
 
       <!-- Posts List -->
@@ -12,21 +12,21 @@
         <article v-for="post in posts" :key="post.id" class="group cursor-pointer">
           <div class="flex flex-col md:flex-row gap-6 items-start">
             <div class="w-full md:w-64 flex-shrink-0">
-              <div class="bg-[#1a1a2e] rounded-xl overflow-hidden aspect-[16/10] border border-white/10">
+              <div class="bg-gray-100 rounded-xl overflow-hidden aspect-[16/10] border border-gray-200">
                 <img :src="post.image" :alt="post.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs text-purple-400 font-medium">{{ post.category }}</span>
-                <span class="text-xs text-gray-500">•</span>
-                <span class="text-xs text-gray-400">{{ post.date }}</span>
+                <span class="text-xs text-purple-600 font-medium">{{ post.category }}</span>
+                <span class="text-xs text-gray-400">•</span>
+                <span class="text-xs text-gray-600">{{ post.date }}</span>
               </div>
-              <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+              <h2 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
                 {{ post.title }}
               </h2>
-              <p class="text-gray-400 mb-4">{{ post.excerpt }}</p>
-              <router-link :to="post.link || '#'" class="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors">
+              <p class="text-gray-600 mb-4">{{ post.excerpt }}</p>
+              <router-link :to="post.link || '#'" class="text-purple-600 hover:text-purple-500 text-sm font-medium transition-colors">
                 阅读全文 →
               </router-link>
             </div>
