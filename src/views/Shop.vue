@@ -1,5 +1,5 @@
 <template>
-  <div class="shop-page ">
+  <div class="shop-page">
     <div class="max-w-6xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="text-center mb-16">
@@ -14,7 +14,7 @@
       <!-- Services Grid -->
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         <!-- Service 1: 网页创作 -->
-        <div class="service-card group transparent rounded-2xl p-8 border border-white/10 hover:border-purple-400 hover:shadow-xl transition-all duration-300">
+        <div class="service-card group rounded-2xl p-8 border border-white/10 hover:border-purple-400 hover:shadow-xl transition-all duration-300">
           <div class="card-icon mb-6">
             <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center">
               <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,13 +40,23 @@
               <span>后台管理系统</span>
             </li>
           </ul>
-          <div class="relative"><button @click="showBuyOptions = !showBuyOptions" class="block w-full py-3 px-6 bg-purple-600 text-white text-center font-semibold rounded-xl hover:bg-purple-700 transition-colors">购买 ▼</button><div v-if="showBuyOptions" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden"><a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">QQ 联系</a><a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">闲鱼主页</a></div></div>
-            购买 
-          </a>
+          <div class="relative">
+            <button @click="showBuyOptions = !showBuyOptions" class="block w-full py-3 px-6 bg-purple-600 text-white text-center font-semibold rounded-xl hover:bg-purple-700 transition-colors">
+              购买 ▼
+            </button>
+            <div v-if="showBuyOptions" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-white/10">
+              <a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
+                💬 QQ 联系
+              </a>
+              <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">
+                🐟 闲鱼主页
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- Service 2: 代码创作 -->
-        <div class="service-card group featured transparent rounded-2xl p-8 border-2 border-purple-500 hover:shadow-2xl transition-all duration-300 relative">
+        <div class="service-card group featured rounded-2xl p-8 border-2 border-purple-500 hover:shadow-2xl transition-all duration-300 relative">
           <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
             热门推荐
           </div>
@@ -75,13 +85,23 @@
               <span>代码优化与重构</span>
             </li>
           </ul>
-          <div class="relative"><button @click="showBuyOptions2 = !showBuyOptions2" class="block w-full py-3 px-6 bg-blue-600 text-white text-center font-semibold rounded-xl hover:bg-blue-700 transition-colors">购买 ▼</button><div v-if="showBuyOptions2" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden"><a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">QQ 联系</a><a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">闲鱼主页</a></div></div>
-            购买 
-          </a>
+          <div class="relative">
+            <button @click="showBuyOptions2 = !showBuyOptions2" class="block w-full py-3 px-6 bg-blue-600 text-white text-center font-semibold rounded-xl hover:bg-blue-700 transition-colors">
+              购买 ▼
+            </button>
+            <div v-if="showBuyOptions2" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-white/10">
+              <a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
+                💬 QQ 联系
+              </a>
+              <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">
+                🐟 闲鱼主页
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- Service 3: AI 思路分享 -->
-        <div class="service-card group transparent rounded-2xl p-8 border border-white/10 hover:border-green-400 hover:shadow-xl transition-all duration-300">
+        <div class="service-card group rounded-2xl p-8 border border-white/10 hover:border-green-400 hover:shadow-xl transition-all duration-300">
           <div class="card-icon mb-6">
             <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center">
               <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,11 +127,18 @@
               <span>1 对 1 咨询服务</span>
             </li>
           </ul>
-          <div class="space-y-3">
-            <div class="relative"><button @click="showBuyOptions3 = !showBuyOptions3" class="block w-full py-3 px-6 bg-green-600 text-white text-center font-semibold rounded-xl hover:bg-green-700 transition-colors">购买 ▼</button><div v-if="showBuyOptions3" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden"><a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">QQ 联系</a><a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">闲鱼主页</a></div></div>
-              购买 
-            </a>
-            <p class="text-center text-gray-500 text-sm">或添加微信咨询</p>
+          <div class="relative">
+            <button @click="showBuyOptions3 = !showBuyOptions3" class="block w-full py-3 px-6 bg-green-600 text-white text-center font-semibold rounded-xl hover:bg-green-700 transition-colors">
+              购买 ▼
+            </button>
+            <div v-if="showBuyOptions3" class="absolute z-10 w-full mt-2 bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-white/10">
+              <a href="tencent://message/?uin=3471023785" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors">
+                💬 QQ 联系
+              </a>
+              <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="block px-6 py-3 text-white hover:bg-gray-700 transition-colors border-t border-gray-700">
+                🐟 闲鱼主页
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -120,7 +147,7 @@
       <div class="text-center py-16 bg-white/5 rounded-2xl">
         <h2 class="text-3xl font-bold text-white mb-4">需要定制服务？</h2>
         <p class="text-gray-300 mb-8">告诉我你的需求，我会为你提供详细的方案和报价</p>
-        <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="inline-flex items-center gap-2 py-3 px-8 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors">
+        <a href="tencent://message/?uin=3471023785" class="inline-flex items-center gap-2 py-3 px-8 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.774 9.214c-.13.65-.506.813-1.037.52l-2.875-2.116-1.388 1.335c-.153.153-.283.283-.58.283l.207-2.932 5.33-4.813c.23-.204-.052-.318-.356-.108l-6.601 4.156-2.846-.89c-.62-.195-.633-.623.13-.925l11.11-4.275c.515-.195.964.12.816.852z"/></svg>
           联系购买
         </a>
@@ -131,15 +158,14 @@
 
 <script>
 export default {
+  name: 'Shop',
   data() {
     return {
       showBuyOptions: false,
       showBuyOptions2: false,
       showBuyOptions3: false
     }
-  },
-
-  name: 'Shop'
+  }
 }
 </script>
 
