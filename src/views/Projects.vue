@@ -27,16 +27,16 @@
     <!-- Projects Grid -->
     <div class="grid md:grid-cols-2 gap-8">
       <div v-for="project in filteredProjects" :key="project.id" class="group cursor-pointer">
-        <div class="bg-[#1a1a2e] rounded-2xl overflow-hidden aspect-[4/3] mb-4 border border-white/10 hover:border-purple-500/50 transition-all">
-          <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] rounded-2xl overflow-hidden aspect-[4/3] mb-4 border border-purple-500/20 hover:border-purple-400 transition-all shadow-lg">
+          <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
         </div>
         <div class="flex items-center gap-2 mb-2">
-          <span v-for="tag in project.tags" :key="tag" class="text-xs text-gray-400 bg-[#2a2a3e] px-3 py-1 rounded-full border border-white/10">
+          <span v-for="tag in project.tags" :key="tag" class="text-xs text-white bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/40">
             {{ tag }}
           </span>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">{{ project.title }}</h3>
-        <p class="text-gray-400">{{ project.description }}</p>
+        <h3 class="text-xl font-bold text-white mb-2">{{ project.title }}</h3>
+        <p class="text-gray-200 text-base">{{ project.description }}</p>
         <router-link :to="project.link" class="inline-flex items-center mt-4 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors">
           View Project →
         </router-link>

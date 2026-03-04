@@ -18,7 +18,7 @@
             :startDelay="300"
           />
         </h1>
-        <p class="text-lg md:text-xl text-apple-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.5s">
           正在学习前沿 AI，探索技术与创意的交汇点
         </p>
         <div class="flex items-center justify-center space-x-4">
@@ -134,6 +134,23 @@ export default {
 .hero-section img {
   content-visibility: auto;
   contain-intrinsic-size: 128px;
+}
+
+/* 渐显动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
 }
 
 .hero-section {

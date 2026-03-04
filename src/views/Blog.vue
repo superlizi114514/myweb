@@ -34,21 +34,7 @@
         </article>
       </div>
 
-      <!-- Pagination -->
-      <div class="flex items-center justify-center mt-16 space-x-2">
-        <button class="px-4 py-2 rounded-lg text-sm text-apple-gray-500 hover:bg-apple-gray-100 transition-colors">
-          Previous
-        </button>
-        <button class="px-4 py-2 rounded-lg text-sm bg-apple-gray-900 text-white">
-          1
-        </button>
-        <button class="px-4 py-2 rounded-lg text-sm text-apple-gray-500 hover:bg-apple-gray-100 transition-colors">
-          2
-        </button>
-        <button class="px-4 py-2 rounded-lg text-sm text-apple-gray-500 hover:bg-apple-gray-100 transition-colors">
-          Next
-        </button>
-      </div>
+
     </div>
   </div>
 </template>
