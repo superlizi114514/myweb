@@ -1,12 +1,12 @@
 <template>
-  <div class="shop-page bg-white min-h-screen">
+  <div class="shop-page ">
     <div class="max-w-6xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
           Services & Shop
         </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
           提供网页开发、代码创作、AI 应用定制等服务
         </p>
       </div>
@@ -14,7 +14,7 @@
       <!-- Services Grid -->
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         <!-- Service 1: 网页创作 -->
-        <div class="service-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-purple-500 hover:shadow-xl transition-all duration-300">
+        <div class="service-card group transparent rounded-2xl p-8 border border-white/10 hover:border-purple-400 hover:shadow-xl transition-all duration-300">
           <div class="card-icon mb-6">
             <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center">
               <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,20 +22,20 @@
               </svg>
             </div>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">网页创作</h3>
-          <p class="text-gray-600 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-3">网页创作</h3>
+          <p class="text-gray-300 mb-6">
             定制化网站开发，包含响应式设计、现代化 UI/UX、性能优化
           </p>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
               <span>企业官网 / 个人作品集</span>
             </li>
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
               <span>电商页面 / 落地页</span>
             </li>
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
               <span>后台管理系统</span>
             </li>
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Service 2: 代码创作 -->
-        <div class="service-card group featured bg-white rounded-2xl p-8 border-2 border-purple-500 hover:shadow-2xl transition-all duration-300 relative">
+        <div class="service-card group featured transparent rounded-2xl p-8 border-2 border-purple-500 hover:shadow-2xl transition-all duration-300 relative">
           <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
             热门推荐
           </div>
@@ -57,20 +57,20 @@
               </svg>
             </div>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">代码创作</h3>
-          <p class="text-gray-600 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-3">代码创作</h3>
+          <p class="text-gray-300 mb-6">
             高质量代码编写与优化，支持多种编程语言和框架
           </p>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
               <span>前端/后端开发</span>
             </li>
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
               <span>API 集成与开发</span>
             </li>
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
               <span>代码优化与重构</span>
             </li>
@@ -81,7 +81,7 @@
         </div>
 
         <!-- Service 3: AI 思路分享 -->
-        <div class="service-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-green-500 hover:shadow-xl transition-all duration-300">
+        <div class="service-card group transparent rounded-2xl p-8 border border-white/10 hover:border-green-400 hover:shadow-xl transition-all duration-300">
           <div class="card-icon mb-6">
             <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center">
               <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,20 +89,20 @@
               </svg>
             </div>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">AI 思路分享</h3>
-          <p class="text-gray-600 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-3">AI 思路分享</h3>
+          <p class="text-gray-300 mb-6">
             AI 应用开发经验分享，包含提示词工程、自动化流程设计
           </p>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-green-600 rounded-full"></span>
               <span>提示词模板分享</span>
             </li>
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-green-600 rounded-full"></span>
               <span>自动化工作流设计</span>
             </li>
-            <li class="flex items-center gap-3 text-gray-700">
+            <li class="flex items-center gap-3 text-gray-200">
               <span class="w-2 h-2 bg-green-600 rounded-full"></span>
               <span>1 对 1 咨询服务</span>
             </li>
@@ -117,9 +117,9 @@
       </div>
 
       <!-- Contact Section -->
-      <div class="text-center py-16 bg-gray-50 rounded-2xl">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">需要定制服务？</h2>
-        <p class="text-gray-600 mb-8">告诉我你的需求，我会为你提供详细的方案和报价</p>
+      <div class="text-center py-16 bg-white/5 rounded-2xl">
+        <h2 class="text-3xl font-bold text-white mb-4">需要定制服务？</h2>
+        <p class="text-gray-300 mb-8">告诉我你的需求，我会为你提供详细的方案和报价</p>
         <a href="https://m.tb.cn/h.iXXX6S4" target="_blank" class="inline-flex items-center gap-2 py-3 px-8 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.774 9.214c-.13.65-.506.813-1.037.52l-2.875-2.116-1.388 1.335c-.153.153-.283.283-.58.283l.207-2.932 5.33-4.813c.23-.204-.052-.318-.356-.108l-6.601 4.156-2.846-.89c-.62-.195-.633-.623.13-.925l11.11-4.275c.515-.195.964.12.816.852z"/></svg>
           联系购买
