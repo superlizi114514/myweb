@@ -1,24 +1,18 @@
 <template>
   <div class="music-player">
-    <button @click="openPlayer" class="play-btn" :class="{ playing: isPlaying }">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    <button @click="togglePlay" class="play-btn" :class="{ playing: isPlaying }">
+      <svg v-if="!isPlaying" class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg v-else class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
       </svg>
     </button>
     <div class="music-info" v-if="isPlaying">
       <span class="music-note">♪</span>
-      <span class="music-text">网易云歌单</span>
+      <span class="music-text">正在播放</span>
     </div>
-    <!-- 隐藏的网易云 iframe -->
-    <iframe 
-      v-if="isPlaying"
-      ref="player"
-      :src="playerUrl"
-      width="1" 
-      height="1" 
-      frameborder="0"
-      allow="autoplay">
-    </iframe>
+    <audio ref="audio" :src="audioUrl" loop @play="isPlaying = true" @pause="isPlaying = false"></audio>
   </div>
 </template>
 
@@ -28,16 +22,16 @@ export default {
   data() {
     return {
       isPlaying: false,
-      playlistId: '2355066086',
-      playerUrl: ''
+      audioUrl: '/music.mp3'
     }
   },
   methods: {
-    openPlayer() {
-      if (!this.isPlaying) {
-        // 打开网易云歌单页面
-        window.open(`https://music.163.com/playlist?id=${this.playlistId}`, '_blank')
-        this.isPlaying = true
+    togglePlay() {
+      const audio = this.$refs.audio
+      if (this.isPlaying) {
+        audio.pause()
+      } else {
+        audio.play().catch(e => console.log('播放失败:', e))
       }
     }
   }

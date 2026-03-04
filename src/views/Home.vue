@@ -28,6 +28,10 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </router-link>
+          <a href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" class="bg-black text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-all flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+            <span>抖音</span>
+          </a>
           <router-link to="/contact" class="bg-white text-apple-gray-900 px-8 py-3 rounded-full text-sm font-medium border border-apple-gray-200 hover:border-apple-gray-400 hover:shadow-md transition-all">
             Get in Touch
           </router-link>
@@ -149,6 +153,6 @@ export default {
 
 .hero-section > div {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 </style>
