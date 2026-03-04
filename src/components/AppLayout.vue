@@ -9,14 +9,14 @@
           </router-link>
           
           <div class="hidden md:flex items-center space-x-8">
-            <router-link to="/about" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200 inline-block">
+            <router-link to="/about" class="nav-link">
               About
             </router-link>
-            <router-link to="/projects" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200 inline-block">
+            <router-link to="/projects" class="nav-link">
               Projects
             </router-link>
-            <router-link to="/blog" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200 inline-block">
-              Blog
+            <router-link to="/shop" class="nav-link">
+              Shop
             </router-link>
           </div>
           
@@ -32,14 +32,14 @@
         <!-- Mobile Menu -->
         <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-white/10">
           <div class="flex flex-col space-y-4">
-            <router-link to="/about" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white hover:scale-105 transition-all duration-200 inline-block">
+            <router-link to="/about" @click="mobileMenuOpen = false" class="nav-link">
               About
             </router-link>
-            <router-link to="/projects" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white hover:scale-105 transition-all duration-200 inline-block">
+            <router-link to="/projects" @click="mobileMenuOpen = false" class="nav-link">
               Projects
             </router-link>
-            <router-link to="/blog" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white hover:scale-105 transition-all duration-200 inline-block">
-              Blog
+            <router-link to="/shop" @click="mobileMenuOpen = false" class="nav-link">
+              Shop
             </router-link>
           </div>
         </div>
@@ -78,6 +78,20 @@
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2a2a3e 100%);
 }
 
+/* 导航链接悬停效果 */
+.nav-link {
+  display: inline-block;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
 /* 手机端优化 */
 @media (max-width: 768px) {
   :deep(.max-w-5xl) {
@@ -88,6 +102,10 @@
   :deep(nav .max-w-5xl) {
     padding-left: 16px;
     padding-right: 16px;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
   }
 }
 </style>

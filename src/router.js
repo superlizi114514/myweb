@@ -3,7 +3,7 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Projects from './views/Projects.vue'
 import Blog from './views/Blog.vue'
-import Contact from './views/Contact.vue'
+import Shop from './views/Shop.vue'
 import OpenClawDeploy from './views/OpenClawDeploy.vue'
 import WebsiteBuild from './views/WebsiteBuild.vue'
 
@@ -12,7 +12,7 @@ const routes = [
   { path: '/about', name: 'About', component: About },
   { path: '/projects', name: 'Projects', component: Projects },
   { path: '/blog', name: 'Blog', component: Blog },
-  { path: '/contact', name: 'Contact', component: Contact },
+  { path: '/shop', name: 'Shop', component: Shop },
   { path: '/openclaw-deploy', name: 'OpenClawDeploy', component: OpenClawDeploy },
   { path: '/website-build', name: 'WebsiteBuild', component: WebsiteBuild },
 ]
