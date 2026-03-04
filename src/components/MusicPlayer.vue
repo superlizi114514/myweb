@@ -12,7 +12,7 @@
       <span class="music-note">♪</span>
       <span class="music-text">正在播放</span>
     </div>
-    <audio ref="audio" :src="songs[currentIndex].url" @ended="nextSong" @play="isPlaying = true" @pause="isPlaying = false"></audio>
+    <audio ref="audio" :src="songs[currentIndex].url" @ended="nextSong" @play="isPlaying = true" @pause="isPlaying = false" preload="auto" crossorigin="anonymous"></audio>
   </div>
 </template>
 
@@ -30,30 +30,60 @@ export default {
       ]
     }
   },
+  mounted() {
+    console.log('MusicPlayer mounted, songs:', this.songs)
+    const audio = this.$refs.audio
+    if (audio) {
+      audio.addEventListener('error', (e) => {
+        console.error('Audio error:', e)
+        console.error('Audio src:', audio.src)
+        console.error('Audio error code:', audio.error?.code)
+        console.error('Audio error message:', audio.error?.message)
+      })
+      audio.addEventListener('loadeddata', () => {
+        console.log('Audio loaded successfully')
+      })
+    }
+  },
   methods: {
     async togglePlay() {
       const audio = this.$refs.audio
       if (!audio) {
         console.error('Audio element not found')
+        alert('播放器未初始化')
         return
       }
+      
+      console.log('Current song:', this.songs[this.currentIndex])
+      console.log('Audio src:', audio.src)
+      console.log('Audio readyState:', audio.readyState)
+      
       try {
         if (this.isPlaying) {
           audio.pause()
+          this.isPlaying = false
         } else {
+          // 先加载再播放
+          audio.load()
+          await new Promise((resolve, reject) => {
+            audio.addEventListener('canplaythrough', resolve, { once: true })
+            audio.addEventListener('error', reject, { once: true })
+            setTimeout(() => reject(new Error('加载超时')), 5000)
+          })
           await audio.play()
-          console.log('Music started playing:', this.songs[this.currentIndex].name)
+          this.isPlaying = true
+          console.log('✅ Music started playing:', this.songs[this.currentIndex].name)
         }
       } catch (e) {
-        console.error('播放失败:', e)
-        alert('播放失败，请检查音乐文件是否存在')
+        console.error('❌ 播放失败:', e)
+        alert('播放失败：' + e.message + '\n请检查：\n1. 浏览器是否允许自动播放\n2. 音乐文件是否正确上传')
       }
     },
     nextSong() {
       this.currentIndex = (this.currentIndex + 1) % this.songs.length
-      console.log('Playing next song:', this.songs[this.currentIndex].name)
+      console.log('⏭ Playing next song:', this.songs[this.currentIndex].name)
       this.$nextTick(() => {
-        this.$refs.audio.play().catch(e => console.error('自动播放失败:', e))
+        this.togglePlay()
       })
     }
   }
