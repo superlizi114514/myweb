@@ -5,7 +5,7 @@
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-12">
           <router-link to="/" class="text-apple-gray-900 font-semibold text-sm hover:text-apple-gray-600 transition-colors">
-            My Portfolio
+            Welcome
           </router-link>
           
           <div class="flex items-center space-x-6">
@@ -19,7 +19,7 @@
               Blog
             </router-link>
             <router-link to="/contact" class="text-apple-gray-500 text-xs hover:text-apple-gray-900 transition-colors">
-              Contact
+              Shop
             </router-link>
           </div>
         </div>
@@ -36,7 +36,7 @@
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between">
           <p class="text-apple-gray-400 text-xs">
-            © 2024 栗子。Powered by OpenClaw + Qwen3.5-Plus
+            © 2026 栗子。Powered by OpenClaw + Qwen3.5-Plus
           </p>
           <div class="flex items-center space-x-4">
             <a href="#" class="text-apple-gray-400 hover:text-apple-gray-600 transition-colors">
