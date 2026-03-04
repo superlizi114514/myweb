@@ -3,13 +3,13 @@
     <!-- Hero -->
     <div class="text-center mb-16">
       <h1 class="text-5xl font-bold text-apple-gray-900 mb-6">About Me</h1>
-      <p class="text-xl text-apple-gray-500">Passionate about creating beautiful, functional digital experiences</p>
+      <p class="text-xl text-apple-gray-500">AI 技术探索者 · 山东 · 中国</p>
     </div>
 
     <!-- Profile Image -->
     <div class="flex justify-center mb-12">
-      <div class="w-48 h-48 rounded-full overflow-hidden bg-apple-gray-200">
-        <img src="https://picsum.photos/400/400?random=10" alt="Profile" class="w-full h-full object-cover" />
+      <div class="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 p-1 shadow-lg">
+        <img src="/avatar.jpg" alt="Profile" class="w-full h-full rounded-full object-cover bg-white" />
       </div>
     </div>
 
