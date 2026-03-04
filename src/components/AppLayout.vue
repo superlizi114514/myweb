@@ -8,7 +8,7 @@
             栗子<span class="text-purple-400">.dev</span>
           </router-link>
           
-          <div class="flex items-center space-x-6">
+          <div class="hidden md:flex items-center space-x-6">
             <router-link to="/about" class="text-gray-400 text-sm hover:text-white transition-colors">
               About
             </router-link>
@@ -16,6 +16,29 @@
               Projects
             </router-link>
             <router-link to="/blog" class="text-gray-400 text-sm hover:text-white transition-colors">
+              Blog
+            </router-link>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path v-if="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-white/10">
+          <div class="flex flex-col space-y-4">
+            <router-link to="/about" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white transition-colors">
+              About
+            </router-link>
+            <router-link to="/projects" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white transition-colors">
+              Projects
+            </router-link>
+            <router-link to="/blog" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white transition-colors">
               Blog
             </router-link>
           </div>
@@ -54,11 +77,29 @@
 .default-page {
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2a2a3e 100%);
 }
+
+/* 手机端优化 */
+@media (max-width: 768px) {
+  :deep(.max-w-5xl) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  :deep(nav .max-w-5xl) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 </style>
 
 <script>
 export default {
   name: 'AppLayout',
+  data() {
+    return {
+      mobileMenuOpen: false
+    }
+  },
   computed: {
     pageClass() {
       // 根据当前路由返回不同的背景类

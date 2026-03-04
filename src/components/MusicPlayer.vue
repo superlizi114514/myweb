@@ -183,6 +183,34 @@ export default {
   padding-right: 20px;
 }
 
+/* 手机端优化 */
+@media (max-width: 768px) {
+  .music-player {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 8px 12px;
+  }
+  
+  .play-btn, .volume-btn {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .music-text {
+    font-size: 11px;
+  }
+  
+  .volume-slider {
+    width: 60px;
+  }
+}
+
 .play-btn, .volume-btn {
   width: 36px;
   height: 36px;
