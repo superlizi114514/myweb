@@ -1,5 +1,8 @@
 <template>
   <div class="home-container">
+    <!-- Background Tags -->
+    <BackgroundTags />
+    
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="max-w-4xl mx-auto px-6 text-center py-32">
@@ -81,12 +84,14 @@
 <script>
 import TypewriterText from '../components/TypewriterText.vue'
 import MusicPlayer from '../components/MusicPlayer.vue'
+import BackgroundTags from '../components/BackgroundTags.vue'
 
 export default {
   name: 'Home',
   components: {
     TypewriterText,
-    MusicPlayer
+    MusicPlayer,
+    BackgroundTags
   },
   data() {
     return {
@@ -117,6 +122,7 @@ export default {
 .home-container {
   min-height: 100vh;
   background: #ffffff;
+  position: relative;
 }
 
 .hero-section {
@@ -124,34 +130,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: transparent;
   position: relative;
   overflow: hidden;
-}
-
-/* 微妙的背景装饰 */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.03) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
 }
 
 .hero-section > div {
