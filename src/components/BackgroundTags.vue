@@ -11,7 +11,6 @@
             :key="`${rowIndex}-${index}`"
             class="floating-tag">
         {{ tag }}
-        <span class="tag-separator">/</span>
       </span>
     </div>
   </div>
@@ -73,8 +72,7 @@ export default {
 }
 
 .floating-tag {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   padding: 8px 20px;
   margin: 0 12px;
   background: rgba(99, 102, 241, 0.1);
@@ -84,12 +82,7 @@ export default {
   color: rgba(99, 102, 241, 0.7);
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
-}
-
-.tag-separator {
-  margin-left: 12px;
-  color: rgba(99, 102, 241, 0.4);
-  font-weight: 300;
+  white-space: nowrap;
 }
 
 @keyframes scroll-left {
