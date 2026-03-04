@@ -1,5 +1,5 @@
 <template>
-  <AppLayout>
+  <div>
     <!-- Hero Section -->
     <section class="min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-white to-apple-gray-50">
       <div class="max-w-4xl mx-auto px-6 text-center">
@@ -52,15 +52,12 @@
         </div>
       </div>
     </section>
-  </AppLayout>
+  </div>
 </template>
 
 <script>
-import AppLayout from '../components/AppLayout.vue'
-
 export default {
   name: 'Home',
-  components: { AppLayout },
   data() {
     return {
       featuredProjects: [
