@@ -24,8 +24,8 @@ export default {
       isPlaying: false,
       currentIndex: 0,
       songs: [
-        { name: 'Music 1', url: '/music1.mp3' },
-        { name: 'Music 2', url: '/music2.mp3' },
+        { name: 'Music 1', url: '/myweb/music1.mp3' },
+        { name: 'Music 2', url: '/myweb/music2.mp3' },
       ]
     }
   },
@@ -48,39 +48,61 @@ export default {
     async togglePlay() {
       const audio = this.$refs.audio
       if (!audio) {
-        console.error('Audio element not found')
-        alert('播放器未初始化')
+        console.error('❌ Audio element not found')
         return
       }
       
-      console.log('Current song:', this.songs[this.currentIndex])
-      console.log('Audio src:', audio.src)
-      console.log('Audio readyState:', audio.readyState)
+      const currentSong = this.songs[this.currentIndex]
+      const fullUrl = window.location.origin + currentSong.url
+      
+      console.log('🎵 Current song:', currentSong.name)
+      console.log('🎵 Audio URL:', currentSong.url)
+      console.log('🎵 Full URL:', fullUrl)
+      console.log('🎵 Audio readyState:', audio.readyState)
       
       try {
         if (this.isPlaying) {
           audio.pause()
           this.isPlaying = false
+          console.log('⏸ Music paused')
         } else {
-          // 先加载再播放
+          // 设置音频源并播放
+          audio.src = fullUrl
           audio.load()
+          
+          console.log('⏳ Loading audio...')
           await new Promise((resolve, reject) => {
-            audio.addEventListener('canplaythrough', resolve, { once: true })
-            audio.addEventListener('error', reject, { once: true })
-            setTimeout(() => reject(new Error('加载超时')), 5000)
+            const timeout = setTimeout(() => {
+              reject(new Error('加载超时，请检查音乐文件是否存在'))
+            }, 10000)
+            
+            audio.addEventListener('canplaythrough', () => {
+              clearTimeout(timeout)
+              resolve()
+            }, { once: true })
+            
+            audio.addEventListener('error', (e) => {
+              clearTimeout(timeout)
+              console.error('❌ Audio load error:', e)
+              console.error('❌ Error code:', audio.error?.code)
+              console.error('❌ Error message:', audio.error?.message)
+              reject(new Error('音频加载失败'))
+            }, { once: true })
           })
+          
+          console.log('✅ Audio loaded, starting playback...')
           await audio.play()
           this.isPlaying = true
-          console.log('✅ Music started playing:', this.songs[this.currentIndex].name)
+          console.log('▶️ Music started:', currentSong.name)
         }
       } catch (e) {
-        console.error('❌ 播放失败:', e)
-        alert('播放失败：' + e.message + '\n请检查：\n1. 浏览器是否允许自动播放\n2. 音乐文件是否正确上传')
+        console.error('❌ Playback failed:', e.message)
+        alert('播放失败：' + e.message + '\n\n请检查：\n1. 打开浏览器控制台（F12）查看详细错误\n2. 确认音乐文件已上传到服务器\n3. 检查网络请求是否被拦截')
       }
     },
     nextSong() {
       this.currentIndex = (this.currentIndex + 1) % this.songs.length
-      console.log('⏭ Playing next song:', this.songs[this.currentIndex].name)
+      console.log('⏭ Next song:', this.songs[this.currentIndex].name)
       this.$nextTick(() => {
         this.togglePlay()
       })

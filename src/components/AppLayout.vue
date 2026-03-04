@@ -33,7 +33,7 @@
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between">
           <p class="text-gray-500 text-sm">
-            © 2024 栗子。Designed with AI & ❤️
+            © 2024 栗子。Powered by OpenClaw + Qwen3.5-Plus
           </p>
           <div class="flex items-center space-x-4">
             <a href="https://github.com/superlizi114514" target="_blank" class="text-gray-500 hover:text-white transition-colors">
