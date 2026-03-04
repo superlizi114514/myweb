@@ -1,14 +1,20 @@
 <template>
   <div class="music-player">
-    <button @click="openPlaylist" class="play-btn" :class="{ playing: isPlaying }">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    <button @click="togglePlay" class="play-btn" :class="{ playing: isPlaying }">
+      <svg v-if="!isPlaying" class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg v-else class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
       </svg>
     </button>
     <div class="music-info" v-if="isPlaying">
       <span class="music-note">♪</span>
-      <span class="music-text">网易云音乐</span>
+      <span class="music-text">{{ currentSong }}</span>
     </div>
+    <audio ref="audio" @ended="nextSong" @play="isPlaying = true" @pause="isPlaying = false">
+      <source :src="songs[currentIndex].url" type="audio/mpeg" />
+    </audio>
   </div>
 </template>
 
@@ -18,13 +24,31 @@ export default {
   data() {
     return {
       isPlaying: false,
-      playlistUrl: 'https://music.163.com/playlist?id=2355066086&userid=1548234920'
+      currentIndex: 0,
+      currentSong: '轻音乐',
+      songs: [
+        { name: '轻音乐 1', url: 'https://music.163.com/song/media/outer/url?id=1825771038.mp3' },
+        { name: '轻音乐 2', url: 'https://music.163.com/song/media/outer/url?id=1901603143.mp3' },
+        { name: '轻音乐 3', url: 'https://music.163.com/song/media/outer/url?id=1863089996.mp3' },
+        { name: '轻音乐 4', url: 'https://music.163.com/song/media/outer/url?id=1863090001.mp3' },
+      ]
     }
   },
   methods: {
-    openPlaylist() {
-      window.open(this.playlistUrl, '_blank')
-      this.isPlaying = true
+    togglePlay() {
+      const audio = this.$refs.audio
+      if (this.isPlaying) {
+        audio.pause()
+      } else {
+        audio.play().catch(e => console.log('播放失败:', e))
+      }
+    },
+    nextSong() {
+      this.currentIndex = (this.currentIndex + 1) % this.songs.length
+      this.currentSong = this.songs[this.currentIndex].name
+      this.$nextTick(() => {
+        this.$refs.audio.play()
+      })
     }
   }
 }
