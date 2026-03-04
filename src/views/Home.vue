@@ -152,9 +152,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2a2a3e 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .hero-section > div {
