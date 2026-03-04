@@ -56,10 +56,10 @@ export default {
       projects: [
         { 
           id: 1, 
-          title: '云端 OpenClaw 部署', 
-          description: '在云端服务器部署 OpenClaw AI 代理框架，实现 24/7 在线服务', 
+          title: 'VPS 部署 OpenClaw', 
+          description: '阿里云学生机 9.9 元/月 + Coding Plan 7 元/月，总费用 17 元/月的 AI 代理部署方案', 
           image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
-          tags: ['OpenClaw', 'Linux', 'Docker'],
+          tags: ['OpenClaw', '阿里云', 'VPS', '学生优惠'],
           category: 'AI',
           link: '#'
         },
@@ -75,7 +75,7 @@ export default {
         { 
           id: 3, 
           title: '个人作品集网站', 
-          description: 'Apple 风格的 Vue 3 个人网站，展示项目与技能', 
+          description: '深色科技风的 Vue 3 个人网站，展示项目与技能', 
           image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
           tags: ['Vue.js', 'Vercel', 'Tailwind'],
           category: 'Web',
