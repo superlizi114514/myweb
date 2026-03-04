@@ -4,11 +4,10 @@
     <section class="hero-section">
       <div class="max-w-4xl mx-auto px-6 text-center">
         <h1 class="text-6xl md:text-7xl font-bold mb-6">
-          <span class="text-apple-gray-900">Hello, I'm </span>
           <TypewriterText 
-            text="栗子" 
-            :delay="150" 
-            :startDelay="300"
+            text="Hello, I'm 栗子" 
+            :speed="200" 
+            :startDelay="500"
             class="gradient-text"
           />
         </h1>

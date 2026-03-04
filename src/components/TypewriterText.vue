@@ -1,11 +1,15 @@
 <template>
   <span class="typewriter">
-    <span v-for="(char, index) in displayText" :key="index" 
-          class="char"
-          :style="{ opacity: shouldShow(index) ? 1 : 0 }">
-      {{ char }}
+    <span class="text-wrapper">
+      <span v-for="(char, index) in fullText" :key="index" 
+            class="char"
+            :class="{ 
+              'visible': index < currentIndex,
+              'cursor': index === currentIndex && isTyping
+            }">
+        {{ char }}
+      </span>
     </span>
-    <span class="cursor" :class="{ blinking: isTyping }">|</span>
   </span>
 </template>
 
@@ -17,9 +21,9 @@ export default {
       type: String,
       required: true
     },
-    delay: {
+    speed: {
       type: Number,
-      default: 100
+      default: 150
     },
     startDelay: {
       type: Number,
@@ -28,35 +32,34 @@ export default {
   },
   data() {
     return {
-      displayText: '',
+      fullText: '',
       currentIndex: 0,
       isTyping: true
     }
   },
   mounted() {
+    this.fullText = this.text
     setTimeout(() => {
       this.typeWriter()
     }, this.startDelay)
   },
   methods: {
     typeWriter() {
-      if (this.currentIndex <= this.text.length) {
-        this.displayText = this.text.slice(0, this.currentIndex)
+      if (this.currentIndex <= this.fullText.length) {
         this.currentIndex++
+        // 随机速度，让打字更自然
+        const randomSpeed = this.speed + Math.random() * 100 - 50
         setTimeout(() => {
           this.typeWriter()
-        }, this.delay)
+        }, randomSpeed)
       } else {
         this.isTyping = false
       }
-    },
-    shouldShow(index) {
-      return index < this.currentIndex
     }
   },
   watch: {
-    text() {
-      this.displayText = ''
+    text(newText) {
+      this.fullText = newText
       this.currentIndex = 0
       this.isTyping = true
       setTimeout(() => {
@@ -73,20 +76,32 @@ export default {
   font-family: inherit;
 }
 
-.char {
-  opacity: 0;
-  transition: opacity 0.1s ease;
+.text-wrapper {
   display: inline;
 }
 
-.cursor {
-  display: inline-block;
-  color: #667eea;
-  font-weight: bold;
-  margin-left: 2px;
+.char {
+  display: inline;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.cursor.blinking {
+.char.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.char.cursor {
+  position: relative;
+}
+
+.char.cursor::after {
+  content: '|';
+  position: absolute;
+  left: 100%;
+  color: #fff;
+  font-weight: bold;
   animation: blink 1s step-end infinite;
 }
 
