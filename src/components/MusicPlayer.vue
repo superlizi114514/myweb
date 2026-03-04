@@ -57,8 +57,8 @@ export default {
       volume: 0.7,
       showVolume: false,
       songs: [
-        { name: '太聪明', url: '/myweb/music1.mp3' },
         { name: '零距离的思念', url: '/myweb/music2.mp3' },
+        { name: '太聪明', url: '/myweb/music1.mp3' },
       ]
     }
   },
