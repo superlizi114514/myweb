@@ -18,6 +18,9 @@
             :startDelay="300"
           />
         </h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          正在学习前沿 AI，探索技术与创意的交汇点
+        </p>
         <div class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed min-h-[3rem]">
           <TypewriterText 
             v-if="showWelcome"
@@ -113,10 +116,16 @@ export default {
           description: '在云端服务器部署 OpenClaw AI 代理框架，实现 24/7 在线服务', 
           image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop'
         },
+        { 
+          id: 2, 
+          title: 'AI Agent 开发', 
+          description: '基于 OpenClaw 开发自定义 AI Agent，实现自动化任务处理', 
+          image: 'https://images.unsplash.com/photo-1676277791608-2d929d4b954f?w=800&h=600&fit=crop'
+        },
       ],
       skills: [
-        'OpenClaw', 'AI Agent', 'Vue.js', 'Node.js', 'Python',
-        'Linux', 'Docker', 'Git', 'Prompt Engineering'
+        'Vue.js', 'React', 'TypeScript', 'Node.js', 'Python',
+        'UI/UX Design', 'Figma', 'Tailwind CSS', 'GraphQL', 'AWS'
       ]
     }
   }

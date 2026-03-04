@@ -36,7 +36,7 @@
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between">
           <p class="text-apple-gray-400 text-xs">
-            © 2024 My Portfolio. Designed with Apple aesthetics.
+            © 2024 栗子。Powered by OpenClaw + Qwen3.5-Plus
           </p>
           <div class="flex items-center space-x-4">
             <a href="#" class="text-apple-gray-400 hover:text-apple-gray-600 transition-colors">
