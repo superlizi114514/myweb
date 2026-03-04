@@ -16,8 +16,8 @@
         :class="[
           'px-6 py-2 rounded-full text-sm font-medium transition-all',
           activeFilter === filter 
-            ? 'bg-apple-gray-900 text-white' 
-            : 'bg-apple-gray-100 text-apple-gray-600 hover:bg-apple-gray-200'
+            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white' 
+            : 'bg-[#2a2a3e] text-gray-300 border border-white/10 hover:border-purple-500/50'
         ]"
       >
         {{ filter }}
