@@ -117,12 +117,6 @@ export default {
           description: '在云端服务器部署 OpenClaw AI 代理框架，实现 24/7 在线服务', 
           image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop'
         },
-        { 
-          id: 2, 
-          title: 'AI Agent 开发', 
-          description: '基于 OpenClaw 开发自定义 AI Agent，实现自动化任务处理', 
-          image: 'https://images.unsplash.com/photo-1676277791608-2d929d4b954f?w=800&h=600&fit=crop'
-        },
       ],
       skills: [
         'Vue.js', 'React', 'TypeScript', 'Node.js', 'Python',
