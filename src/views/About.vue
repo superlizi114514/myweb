@@ -59,17 +59,17 @@
 
       <!-- Contact -->
       <div class="mt-16">
-        <h2 class="text-2xl font-bold text-white mb-8">联系我</h2>
+        <h2 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-8">联系我</h2>
         <div class="flex flex-wrap gap-4">
-          <a href="tencent://message/?uin=3471023785" class="flex items-center gap-3 bg-[#2a2a3e] text-white px-6 py-3 rounded-full border border-white/20 hover:border-blue-500/50 hover:bg-[#3a3a4e] transition-all">
+          <a href="tencent://message/?uin=3471023785" class="flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.003 2c-1.699 0-3.26.32-4.683.903-5.867 2.407-6.066 9.397.199 11.836v2.72c0 1.279-1.081 2.33-2.367 2.33-1.285 0-2.329-1.051-2.329-2.33V16.3c0-.552-.448-1-1-1s-1 .448-1 1v1.159c0 1.852 1.501 3.359 3.352 3.359 1.851 0 3.351-1.507 3.351-3.359v-2.72c6.265-2.439 6.066-9.429.199-11.836C15.263 2.32 13.702 2 12.003 2zM9.003 20.003c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2zm6.003 0c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z"/></svg>
             <span>QQ: 3471023785</span>
           </a>
-          <a href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" class="flex items-center gap-3 bg-[#2a2a3e] text-white px-6 py-3 rounded-full border border-white/20 hover:border-white/40 hover:bg-[#3a3a4e] transition-all">
+          <a href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" class="flex items-center gap-3 bg-gradient-to-r from-gray-800 to-black text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-gray-800/50 transition-all">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
             <span>抖音</span>
           </a>
-          <a href="https://m.tb.cn/h.iXXX6S4?tk=78fdUHnev25" target="_blank" class="flex items-center gap-3 bg-[#2a2a3e] text-white px-6 py-3 rounded-full border border-white/20 hover:border-yellow-500/50 hover:bg-[#3a3a4e] transition-all">
+          <a href="https://m.tb.cn/h.iXXX6S4?tk=78fdUHnev25" target="_blank" class="flex items-center gap-3 bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-yellow-500/50 transition-all">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
             <span>闲鱼</span>
           </a>
@@ -78,7 +78,7 @@
 
       <!-- Back to Home -->
       <div class="text-center mt-16 pb-12">
-        <router-link to="/" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+        <router-link to="/" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
@@ -111,8 +111,24 @@ export default {
 <style scoped>
 .about-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2a2a3e 100%);
   animation: fadeIn 0.5s ease;
+  position: relative;
+}
+
+/* 背景弹幕容器 */
+.about-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes fadeIn {
@@ -124,5 +140,19 @@ export default {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* 内容区域添加半透明背景 */
+.about-page > div {
+  position: relative;
+  z-index: 1;
+}
+
+.about-page > div > .max-w-4xl {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 64px 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 </style>
