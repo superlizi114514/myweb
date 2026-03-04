@@ -2,25 +2,41 @@
   <div class="home-container">
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h1 class="text-6xl md:text-7xl font-bold mb-6">
+      <div class="max-w-4xl mx-auto px-6 text-center py-32">
+        <!-- Avatar -->
+        <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 shadow-lg">
+          <div class="w-full h-full rounded-full bg-white flex items-center justify-center text-4xl">
+            🌰
+          </div>
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-apple-gray-900">
           <TypewriterText 
             text="Hello, I'm 栗子" 
-            :speed="200" 
-            :startDelay="500"
-            class="gradient-text"
+            :speed="150" 
+            :startDelay="300"
           />
         </h1>
-        <p class="text-xl md:text-2xl text-apple-gray-500 mb-8 animate-slide-up" style="animation-delay: 0.5s">
-          正在学习前沿 AI，欢迎志同道合的伙伴
+        <p class="text-lg md:text-xl text-apple-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+          正在学习前沿 AI，探索技术与创意的交汇点
         </p>
-        <div class="flex items-center justify-center space-x-4 animate-slide-up" style="animation-delay: 0.8s">
-          <router-link to="/projects" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:shadow-lg hover:scale-105 transition-all">
-            View My Work
+        <div class="flex items-center justify-center space-x-4">
+          <router-link to="/projects" class="group bg-apple-gray-900 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-apple-gray-800 transition-all flex items-center gap-2">
+            <span>View My Work</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
           </router-link>
-          <router-link to="/contact" class="bg-white/80 backdrop-blur-sm text-apple-gray-900 px-8 py-3 rounded-full text-sm font-medium border border-white/50 hover:border-purple-300 hover:shadow-lg hover:scale-105 transition-all">
+          <router-link to="/contact" class="bg-white text-apple-gray-900 px-8 py-3 rounded-full text-sm font-medium border border-apple-gray-200 hover:border-apple-gray-400 hover:shadow-md transition-all">
             Get in Touch
           </router-link>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="mt-20 animate-bounce">
+          <svg class="w-6 h-6 text-apple-gray-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
         </div>
       </div>
     </section>
@@ -28,8 +44,11 @@
     <!-- Featured Projects -->
     <section class="py-24 bg-white">
       <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-apple-gray-900 mb-12 text-center">Featured Projects</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-apple-gray-900 mb-4">Featured Projects</h2>
+          <p class="text-apple-gray-500">精选项目展示</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
           <div v-for="project in featuredProjects" :key="project.id" class="group cursor-pointer">
             <div class="bg-apple-gray-50 rounded-2xl overflow-hidden aspect-[4/3] mb-4">
               <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -38,20 +57,18 @@
             <p class="text-apple-gray-500 text-sm">{{ project.description }}</p>
           </div>
         </div>
-        <div class="text-center mt-12">
-          <router-link to="/projects" class="text-blue-500 hover:text-blue-600 text-sm font-medium transition-colors">
-            View all projects →
-          </router-link>
-        </div>
       </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="py-24 bg-apple-gray-50">
+    <section class="py-24 bg-gradient-to-b from-white to-apple-gray-50">
       <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-apple-gray-900 mb-12 text-center">Skills & Technologies</h2>
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-apple-gray-900 mb-4">Skills & Technologies</h2>
+          <p class="text-apple-gray-500">技术栈与工具</p>
+        </div>
         <div class="flex flex-wrap justify-center gap-3">
-          <span v-for="skill in skills" :key="skill" class="bg-white px-6 py-3 rounded-full text-sm text-apple-gray-700 shadow-sm hover:shadow-md transition-shadow">
+          <span v-for="skill in skills" :key="skill" class="bg-white px-6 py-3 rounded-full text-sm text-apple-gray-700 border border-apple-gray-200 hover:border-blue-500 hover:text-blue-500 transition-all shadow-sm hover:shadow-md">
             {{ skill }}
           </span>
         </div>
@@ -92,6 +109,7 @@ export default {
 <style scoped>
 .home-container {
   min-height: 100vh;
+  background: #ffffff;
 }
 
 .hero-section {
@@ -99,37 +117,38 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background: #ffffff;
   position: relative;
   overflow: hidden;
 }
 
+/* 微妙的背景装饰 */
 .hero-section::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  animation: rotate 30s linear infinite;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero-section > div {
   position: relative;
   z-index: 1;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
 }
 </style>
