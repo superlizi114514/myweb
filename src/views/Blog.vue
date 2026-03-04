@@ -3,7 +3,7 @@
     <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="text-center mb-16">
-        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-6">Blog</h1>
+        <h1 class="text-5xl font-bold text-white mb-6">Blog</h1>
         <p class="text-xl text-gray-400">Thoughts, tutorials, and insights</p>
       </div>
 

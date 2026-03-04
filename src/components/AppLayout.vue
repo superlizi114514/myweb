@@ -168,6 +168,63 @@
 }
 </style>
 
+<style>
+/* 全局导航样式 - 必须放在这里才能生效 */
+.nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: #9ca3af !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2) !important;
+}
+
+.nav-link svg {
+  transition: all 0.3s ease !important;
+}
+
+.nav-link:hover svg {
+  transform: scale(1.1) !important;
+  color: #a78bfa !important;
+}
+
+.mobile-nav-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  color: #9ca3af !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.mobile-nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+  transform: translateX(8px) !important;
+}
+
+/* Blog 页面背景 */
+.blog-page {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2a2a3e 100%) !important;
+}
+</style>
+
 <script>
 export default {
   name: 'AppLayout',
@@ -178,7 +235,6 @@ export default {
   },
   computed: {
     pageClass() {
-      // 根据当前路由返回不同的背景类
       const path = this.$route.path
       if (path === '/') return 'home-page'
       return 'default-page'
