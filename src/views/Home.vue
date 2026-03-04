@@ -91,13 +91,22 @@ export default {
   data() {
     return {
       featuredProjects: [
-        { id: 1, title: 'Project One', description: 'A beautiful web application', image: 'https://picsum.photos/800/600?random=1' },
-        { id: 2, title: 'Project Two', description: 'Mobile-first design system', image: 'https://picsum.photos/800/600?random=2' },
-        { id: 3, title: 'Project Three', description: 'E-commerce platform', image: 'https://picsum.photos/800/600?random=3' },
+        { 
+          id: 1, 
+          title: '云端 OpenClaw 部署', 
+          description: '在云端服务器部署 OpenClaw AI 代理框架，实现 24/7 在线服务', 
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop'
+        },
+        { 
+          id: 2, 
+          title: 'AI Agent 开发', 
+          description: '基于 OpenClaw 开发自定义 AI Agent，实现自动化任务处理', 
+          image: 'https://images.unsplash.com/photo-1676277791608-2d929d4b954f?w=800&h=600&fit=crop'
+        },
       ],
       skills: [
-        'Vue.js', 'React', 'TypeScript', 'Node.js', 'Python',
-        'UI/UX Design', 'Figma', 'Tailwind CSS', 'GraphQL', 'AWS'
+        'OpenClaw', 'AI Agent', 'Vue.js', 'Node.js', 'Python',
+        'Linux', 'Docker', 'Git', 'Prompt Engineering'
       ]
     }
   }

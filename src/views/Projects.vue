@@ -56,7 +56,7 @@ export default {
           id: 1, 
           title: '云端 OpenClaw 部署', 
           description: '在云端服务器部署 OpenClaw AI 代理框架，实现 24/7 在线服务', 
-          image: 'https://picsum.photos/800/600?random=20',
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
           tags: ['OpenClaw', 'Linux', 'Docker'],
           category: 'AI',
           link: '#'
@@ -65,7 +65,7 @@ export default {
           id: 2, 
           title: 'AI Agent 开发', 
           description: '基于 OpenClaw 开发自定义 AI Agent，实现自动化任务处理', 
-          image: 'https://picsum.photos/800/600?random=21',
+          image: 'https://images.unsplash.com/photo-1676277791608-2d929d4b954f?w=800&h=600&fit=crop',
           tags: ['AI Agent', 'Node.js', 'Automation'],
           category: 'AI',
           link: '#'
@@ -74,7 +74,7 @@ export default {
           id: 3, 
           title: '个人作品集网站', 
           description: 'Apple 风格的 Vue 3 个人网站，展示项目与技能', 
-          image: 'https://picsum.photos/800/600?random=22',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
           tags: ['Vue.js', 'Vercel', 'Tailwind'],
           category: 'Web',
           link: '#'

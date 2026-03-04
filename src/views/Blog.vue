@@ -59,27 +59,27 @@ export default {
       posts: [
         {
           id: 1,
-          title: 'Building Beautiful UIs with Vue 3',
-          excerpt: 'Learn how to create stunning user interfaces using Vue 3 composition API and modern CSS techniques.',
-          category: 'Tutorial',
+          title: 'OpenClaw AI 代理入门教程',
+          excerpt: '从零开始学习如何部署和配置 OpenClaw AI 代理框架，实现自动化任务处理。',
+          category: 'AI 教程',
           date: 'Mar 1, 2024',
-          image: 'https://picsum.photos/400/250?random=30'
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop'
         },
         {
           id: 2,
-          title: 'The Art of Minimalist Design',
-          excerpt: 'Exploring the principles of minimalist design and how to apply them to your web projects.',
-          category: 'Design',
+          title: 'AI Agent 应用场景分享',
+          excerpt: '探索 AI Agent 在实际工作和生活中的应用场景，提升效率的实用技巧。',
+          category: 'AI 应用',
           date: 'Feb 25, 2024',
-          image: 'https://picsum.photos/400/250?random=31'
+          image: 'https://images.unsplash.com/photo-1676277791608-2d929d4b954f?w=400&h=250&fit=crop'
         },
         {
           id: 3,
-          title: 'Optimizing Web Performance in 2024',
-          excerpt: 'Best practices and techniques for making your websites faster and more efficient.',
-          category: 'Performance',
+          title: 'Vue 3 性能优化实践',
+          excerpt: '分享 Vue 3 项目性能优化的实战经验和最佳实践。',
+          category: '开发技巧',
           date: 'Feb 20, 2024',
-          image: 'https://picsum.photos/400/250?random=32'
+          image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop'
         },
       ]
     }
