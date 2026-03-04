@@ -1,6 +1,5 @@
 <template>
-  <AppLayout>
-    <div class="max-w-4xl mx-auto px-6 py-24">
+  <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl font-bold text-apple-gray-900 mb-6">Get in Touch</h1>
@@ -77,16 +76,12 @@
           </form>
         </div>
       </div>
-    </div>
-  </AppLayout>
+  </div>
 </template>
 
 <script>
-import AppLayout from '../components/AppLayout.vue'
-
 export default {
   name: 'Contact',
-  components: { AppLayout },
   data() {
     return {
       form: {
