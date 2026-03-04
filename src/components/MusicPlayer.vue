@@ -26,7 +26,6 @@ export default {
       songs: [
         { name: 'Music 1', url: '/music1.mp3' },
         { name: 'Music 2', url: '/music2.mp3' },
-        { name: 'Music 3', url: '/music.mp3' },
       ]
     }
   },
