@@ -37,9 +37,9 @@
         </div>
         <h3 class="text-xl font-semibold text-white mb-2">{{ project.title }}</h3>
         <p class="text-gray-400">{{ project.description }}</p>
-        <a :href="project.link" target="_blank" class="inline-flex items-center mt-4 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors">
+        <router-link :to="project.link" class="inline-flex items-center mt-4 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors">
           View Project →
-        </a>
+        </router-link>
       </div>
     </div>
     </div>
@@ -61,7 +61,7 @@ export default {
           image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
           tags: ['OpenClaw', '阿里云', 'VPS', '学生优惠'],
           category: 'AI',
-          link: '#'
+          link: '/openclaw-deploy'
         },
         { 
           id: 2, 

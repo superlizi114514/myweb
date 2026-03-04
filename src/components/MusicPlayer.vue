@@ -1,6 +1,6 @@
 <template>
   <div class="music-player">
-    <button @click="togglePlay" class="play-btn" :class="{ playing: isPlaying }">
+    <button @click.stop="togglePlay" class="play-btn" :class="{ playing: isPlaying }">
       <svg v-if="!isPlaying" class="icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M8 5v14l11-7z"/>
       </svg>
@@ -31,18 +31,29 @@ export default {
     }
   },
   methods: {
-    togglePlay() {
+    async togglePlay() {
       const audio = this.$refs.audio
-      if (this.isPlaying) {
-        audio.pause()
-      } else {
-        audio.play().catch(e => console.log('播放失败:', e))
+      if (!audio) {
+        console.error('Audio element not found')
+        return
+      }
+      try {
+        if (this.isPlaying) {
+          audio.pause()
+        } else {
+          await audio.play()
+          console.log('Music started playing:', this.songs[this.currentIndex].name)
+        }
+      } catch (e) {
+        console.error('播放失败:', e)
+        alert('播放失败，请检查音乐文件是否存在')
       }
     },
     nextSong() {
       this.currentIndex = (this.currentIndex + 1) % this.songs.length
+      console.log('Playing next song:', this.songs[this.currentIndex].name)
       this.$nextTick(() => {
-        this.$refs.audio.play()
+        this.$refs.audio.play().catch(e => console.error('自动播放失败:', e))
       })
     }
   }
