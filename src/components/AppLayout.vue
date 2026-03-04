@@ -8,14 +8,14 @@
             栗子<span class="text-purple-400">.dev</span>
           </router-link>
           
-          <div class="hidden md:flex items-center space-x-6">
-            <router-link to="/about" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200">
+          <div class="hidden md:flex items-center space-x-8">
+            <router-link to="/about" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200 inline-block">
               About
             </router-link>
-            <router-link to="/projects" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200">
+            <router-link to="/projects" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200 inline-block">
               Projects
             </router-link>
-            <router-link to="/blog" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200">
+            <router-link to="/blog" class="text-gray-400 text-sm hover:text-white hover:scale-110 transition-all duration-200 inline-block">
               Blog
             </router-link>
           </div>
@@ -32,13 +32,13 @@
         <!-- Mobile Menu -->
         <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-white/10">
           <div class="flex flex-col space-y-4">
-            <router-link to="/about" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white transition-colors">
+            <router-link to="/about" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white hover:scale-105 transition-all duration-200 inline-block">
               About
             </router-link>
-            <router-link to="/projects" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white transition-colors">
+            <router-link to="/projects" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white hover:scale-105 transition-all duration-200 inline-block">
               Projects
             </router-link>
-            <router-link to="/blog" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white transition-colors">
+            <router-link to="/blog" @click="mobileMenuOpen = false" class="text-gray-400 hover:text-white hover:scale-105 transition-all duration-200 inline-block">
               Blog
             </router-link>
           </div>
