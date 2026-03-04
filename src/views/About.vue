@@ -65,7 +65,7 @@
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.003 2c-1.699 0-3.26.32-4.683.903-5.867 2.407-6.066 9.397.199 11.836v2.72c0 1.279-1.081 2.33-2.367 2.33-1.285 0-2.329-1.051-2.329-2.33V16.3c0-.552-.448-1-1-1s-1 .448-1 1v1.159c0 1.852 1.501 3.359 3.352 3.359 1.851 0 3.351-1.507 3.351-3.359v-2.72c6.265-2.439 6.066-9.429.199-11.836C15.263 2.32 13.702 2 12.003 2zM9.003 20.003c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2zm6.003 0c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z"/></svg>
             <span>QQ: 3471023785</span>
           </a>
-          <a href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" class="flex items-center gap-3 bg-gradient-to-r from-gray-800 to-black text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-gray-800/50 transition-all">
+          <a href="https://v.douyin.com/di64-2AO-WM/" target="_blank" class="flex items-center gap-3 bg-gradient-to-r from-gray-800 to-black text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-gray-800/50 transition-all">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
             <span>抖音</span>
           </a>
