@@ -19,8 +19,10 @@
               :startDelay="300"
             />
           </h1>
-          <p v-if="!showWelcome" class="text-lg md:text-xl text-gray-300 leading-relaxed animate-fade-in">
-            正在学习前沿 AI，探索技术与创意的交汇点
+          <p v-if="!showWelcome" class="text-lg md:text-xl text-gray-300 leading-relaxed animate-fade-in-subtitle">
+            <span v-for="(char, index) in subtitleText" :key="index" :style="{ animationDelay: `${index * 0.05}s` }" class="inline-block animate-fade-in-char">
+              {{ char }}
+            </span>
           </p>
           <div v-if="showWelcome" class="text-lg md:text-xl text-gray-400 leading-relaxed">
             <TypewriterText 
@@ -106,6 +108,7 @@ export default {
   data() {
     return {
       showWelcome: false,
+      subtitleText: '正在学习前沿 AI，探索技术与创意的交汇点',
       featuredProjects: [
         { 
           id: 1, 
@@ -151,6 +154,27 @@ export default {
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
+}
+
+/* 副标题逐字渐显动画 */
+@keyframes fadeInChar {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-char {
+  animation: fadeInChar 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-subtitle {
+  display: inline;
 }
 
 .hero-section {
