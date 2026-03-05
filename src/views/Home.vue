@@ -90,21 +90,17 @@
       </div>
     </section>
 
-    <!-- Music Player -->
-    <MusicPlayer />
   </div>
 </template>
 
 <script>
 import TypewriterText from '../components/TypewriterText.vue'
-import MusicPlayer from '../components/MusicPlayer.vue'
 import BackgroundTags from '../components/BackgroundTags.vue'
 
 export default {
   name: 'Home',
   components: {
     TypewriterText,
-    MusicPlayer,
     BackgroundTags
   },
   data() {
