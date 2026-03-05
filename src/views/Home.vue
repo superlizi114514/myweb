@@ -20,7 +20,7 @@
             />
           </h1>
           <p v-if="!showWelcome" class="text-lg md:text-xl text-gray-300 leading-relaxed animate-fade-in-subtitle">
-            <span v-for="(char, index) in subtitleText" :key="index" :style="{ animationDelay: `${index * 0.05}s` }" class="inline-block animate-fade-in-char">
+            <span v-for="(char, index) in subtitleText" :key="index" :style="{ animationDelay: `${2 + index * 0.08}s` }" class="inline-block animate-fade-in-char">
               {{ char }}
             </span>
           </p>
