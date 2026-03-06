@@ -19,18 +19,11 @@
               :startDelay="300"
             />
           </h1>
-          <p v-if="!showWelcome" class="text-lg md:text-xl text-gray-300 leading-relaxed animate-fade-in-subtitle">
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed animate-fade-in-subtitle">
             <span v-for="(char, index) in subtitleText" :key="index" :style="{ animationDelay: `${2 + index * 0.08}s` }" class="inline-block animate-fade-in-char">
               {{ char }}
             </span>
           </p>
-          <div v-if="showWelcome" class="text-lg md:text-xl text-gray-400 leading-relaxed">
-            <TypewriterText 
-              text="这里是我的空间 我将向你展示我的全部 欢迎志同道合的朋友" 
-              :speed="80" 
-              :startDelay="2000"
-            />
-          </div>
         </div>
         <div class="flex items-center justify-center space-x-4">
           <router-link to="/shop" class="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2">
@@ -107,7 +100,6 @@ export default {
   },
   data() {
     return {
-      showWelcome: false,
       subtitleText: '正在学习前沿 AI，探索技术与创意的交汇点',
       featuredProjects: [
         { 

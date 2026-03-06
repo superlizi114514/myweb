@@ -21,6 +21,9 @@
             <router-link to="/shop" class="text-gray-300 text-sm hover:text-white hover:scale-105 hover:text-purple-400 transition-all duration-300">
               Shop
             </router-link>
+            <router-link to="/templates" class="text-gray-300 text-sm hover:text-white hover:scale-105 hover:text-purple-400 transition-all duration-300">
+              Templates
+            </router-link>
           </div>
         </div>
       </div>

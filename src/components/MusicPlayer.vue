@@ -70,19 +70,12 @@ export default {
       this.currentIndex = state.currentIndex || 0
       this.volume = state.volume || 0.7
     }
-  },
-  mounted() {
-    console.log('MusicPlayer mounted, songs:', this.songs)
+
+    // 音频加载状态监听
     const audio = this.$refs.audio
     if (audio) {
       audio.addEventListener('error', (e) => {
-        console.error('Audio error:', e)
-        console.error('Audio src:', audio.src)
-        console.error('Audio error code:', audio.error?.code)
-        console.error('Audio error message:', audio.error?.message)
-      })
-      audio.addEventListener('loadeddata', () => {
-        console.log('Audio loaded successfully')
+        console.error('Audio error:', audio.error?.message || 'Unknown error')
       })
     }
   },
@@ -102,56 +95,31 @@ export default {
     },
     async togglePlay() {
       const audio = this.$refs.audio
-      if (!audio) {
-        console.error('❌ Audio element not found')
-        return
-      }
-      
+      if (!audio) return
+
       const currentSong = this.songs[this.currentIndex]
-      const fullUrl = window.location.origin + currentSong.url
-      
-      console.log('🎵 Current song:', currentSong.name)
-      console.log('🎵 Audio URL:', currentSong.url)
-      console.log('🎵 Full URL:', fullUrl)
-      console.log('🎵 Audio readyState:', audio.readyState)
-      
+
       try {
         if (this.isPlaying) {
           audio.pause()
           this.isPlaying = false
-          console.log('⏸ Music paused')
         } else {
-          // 设置音频源并播放
-          audio.src = fullUrl
+          audio.src = currentSong.url
           audio.volume = this.volume
           audio.load()
-          
-          console.log('⏳ Loading audio...')
+
           await new Promise((resolve, reject) => {
-            const timeout = setTimeout(() => {
-              reject(new Error('加载超时，请检查音乐文件是否存在'))
-            }, 10000)
-            
-            audio.addEventListener('canplaythrough', () => {
-              clearTimeout(timeout)
-              resolve()
-            }, { once: true })
-            
-            audio.addEventListener('error', (e) => {
-              clearTimeout(timeout)
-              console.error('❌ Audio load error:', e)
-              reject(new Error('音频加载失败'))
-            }, { once: true })
+            const timeout = setTimeout(() => reject(new Error('加载超时')), 10000)
+            audio.addEventListener('canplaythrough', () => { clearTimeout(timeout); resolve() }, { once: true })
+            audio.addEventListener('error', () => { clearTimeout(timeout); reject(new Error('加载失败')) }, { once: true })
           })
-          
-          console.log('✅ Audio loaded, starting playback...')
+
           await audio.play()
           this.isPlaying = true
           this.saveState()
-          console.log('▶️ Music started:', currentSong.name)
         }
       } catch (e) {
-        console.error('❌ Playback failed:', e.message)
+        console.error('播放失败:', e.message)
       }
     },
     nextSong() {
