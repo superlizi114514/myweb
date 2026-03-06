@@ -27,12 +27,46 @@
               </svg>
               <span>Projects</span>
             </router-link>
+            <router-link to="/blog" class="nav-link">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              <span>Blog</span>
+            </router-link>
             <router-link to="/shop" class="nav-link">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
               </svg>
               <span>Shop</span>
             </router-link>
+            
+            <!-- 模板网站下拉菜单 -->
+            <div class="relative group">
+              <button class="nav-link">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                </svg>
+                <span>模板网站</span>
+                <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="absolute right-0 mt-2 w-48 bg-[#1a1a2e] border border-purple-500/30 rounded-xl shadow-xl shadow-purple-500/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div class="py-2">
+                  <router-link to="/shopping" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">🛒 购物网站</router-link>
+                  <router-link to="/corporate" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">🏢 企业官网</router-link>
+                  <router-link to="/forum" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">💬 论坛网站</router-link>
+                  <router-link to="/education" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">📚 教育网站</router-link>
+                  <router-link to="/music" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">🎵 音乐网站</router-link>
+                  <router-link to="/fitness" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">💪 健身网站</router-link>
+                  <router-link to="/pet" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">📱 科技网站</router-link>
+                  <router-link to="/portfolio" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">🎨 作品集</router-link>
+                  <router-link to="/restaurant" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">🍽️ 餐厅网站</router-link>
+                  <router-link to="/travel" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">✈️ 旅游网站</router-link>
+                  <router-link to="/minimal" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-purple-500/15 transition-colors text-sm">⬜ 简约风格</router-link>
+                </div>
+              </div>
+            </div>
           </div>
           
           <!-- Mobile Menu Button -->
@@ -59,12 +93,32 @@
               </svg>
               <span>Projects</span>
             </router-link>
+            <router-link to="/blog" @click="mobileMenuOpen = false" class="mobile-nav-link">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              <span>Blog</span>
+            </router-link>
             <router-link to="/shop" @click="mobileMenuOpen = false" class="mobile-nav-link">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
               </svg>
               <span>Shop</span>
             </router-link>
+            
+            <!-- 模板网站 -->
+            <div class="pl-11 pr-4 py-2 text-gray-400 text-sm font-medium">模板网站</div>
+            <router-link to="/shopping" @click="mobileMenuOpen = false" class="mobile-nav-link">🛒 购物网站</router-link>
+            <router-link to="/corporate" @click="mobileMenuOpen = false" class="mobile-nav-link">🏢 企业官网</router-link>
+            <router-link to="/forum" @click="mobileMenuOpen = false" class="mobile-nav-link">💬 论坛网站</router-link>
+            <router-link to="/education" @click="mobileMenuOpen = false" class="mobile-nav-link">📚 教育网站</router-link>
+            <router-link to="/music" @click="mobileMenuOpen = false" class="mobile-nav-link">🎵 音乐网站</router-link>
+            <router-link to="/fitness" @click="mobileMenuOpen = false" class="mobile-nav-link">💪 健身网站</router-link>
+            <router-link to="/pet" @click="mobileMenuOpen = false" class="mobile-nav-link">📱 科技网站</router-link>
+            <router-link to="/portfolio" @click="mobileMenuOpen = false" class="mobile-nav-link">🎨 作品集</router-link>
+            <router-link to="/restaurant" @click="mobileMenuOpen = false" class="mobile-nav-link">🍽️ 餐厅网站</router-link>
+            <router-link to="/travel" @click="mobileMenuOpen = false" class="mobile-nav-link">✈️ 旅游网站</router-link>
+            <router-link to="/minimal" @click="mobileMenuOpen = false" class="mobile-nav-link">⬜ 简约风格</router-link>
           </div>
         </div>
       </div>
