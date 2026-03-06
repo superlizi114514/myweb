@@ -3,12 +3,12 @@
     <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="mb-16">
-        <router-link to="/blog" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors">
+        <a @click="goBack" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors cursor-pointer">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
-          <span>Back to Blog</span>
-        </router-link>
+          <span>{{ backText }}</span>
+        </a>
         <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-6">
           个人网站搭建全记录
         </h1>
@@ -285,7 +285,23 @@
 
 <script>
 export default {
-  name: 'WebsiteBuild'
+  name: 'WebsiteBuild',
+  computed: {
+    backText() {
+      const from = this.$route.query.from
+      return from === 'projects' ? 'Back to Projects' : 'Back to Blog'
+    }
+  },
+  methods: {
+    goBack() {
+      const from = this.$route.query.from
+      if (from === 'projects') {
+        this.$router.push('/projects')
+      } else {
+        this.$router.push('/blog')
+      }
+    }
+  }
 }
 </script>
 

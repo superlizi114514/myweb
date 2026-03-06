@@ -3,12 +3,12 @@
     <div class="max-w-4xl mx-auto px-6 py-24">
       <!-- Header -->
       <div class="mb-16">
-        <router-link to="/projects" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors">
+        <a @click="goBack" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors cursor-pointer">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
-          <span>Back to Projects</span>
-        </router-link>
+          <span>{{ backText }}</span>
+        </a>
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">VPS 部署 OpenClaw 完整教程</h1>
         <div class="flex items-center gap-4 text-gray-400">
           <span class="flex items-center gap-2">
@@ -298,7 +298,23 @@
 
 <script>
 export default {
-  name: 'OpenClawDeploy'
+  name: 'OpenClawDeploy',
+  computed: {
+    backText() {
+      const from = this.$route.query.from
+      return from === 'blog' ? 'Back to Blog' : 'Back to Projects'
+    }
+  },
+  methods: {
+    goBack() {
+      const from = this.$route.query.from
+      if (from === 'blog') {
+        this.$router.push('/blog')
+      } else {
+        this.$router.push('/projects')
+      }
+    }
+  }
 }
 </script>
 
