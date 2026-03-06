@@ -41,8 +41,8 @@
             </router-link>
             
             <!-- 模板网站下拉菜单 -->
-            <div class="relative group" style="position: static;">
-              <a href="javascript:void(0)" class="nav-link" style="position: static !important; cursor: pointer;">
+            <div class="nav-dropdown">
+              <div class="nav-link nav-dropdown-trigger">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
                 </svg>
@@ -50,21 +50,19 @@
                 <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
-              </a>
-              <div class="absolute right-0 top-full mt-2 w-56 bg-[#1a1a2e]/98 border border-purple-500/40 rounded-xl shadow-2xl shadow-purple-500/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="position: absolute !important;">
-                <div class="py-2 max-h-[70vh] overflow-y-auto">
-                  <router-link to="/shopping" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">🛒 购物网站</router-link>
-                  <router-link to="/corporate" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">🏢 企业官网</router-link>
-                  <router-link to="/forum" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">💬 论坛网站</router-link>
-                  <router-link to="/education" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">📚 教育网站</router-link>
-                  <router-link to="/music" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">🎵 音乐网站</router-link>
-                  <router-link to="/fitness" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">💪 健身网站</router-link>
-                  <router-link to="/pet" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">📱 科技网站</router-link>
-                  <router-link to="/portfolio" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">🎨 作品集</router-link>
-                  <router-link to="/restaurant" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">🍽️ 餐厅网站</router-link>
-                  <router-link to="/travel" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">✈️ 旅游网站</router-link>
-                  <router-link to="/minimal" class="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all text-sm">⬜ 简约风格</router-link>
-                </div>
+              </div>
+              <div class="dropdown-menu">
+                <router-link to="/shopping" class="dropdown-item">🛒 购物网站</router-link>
+                <router-link to="/corporate" class="dropdown-item">🏢 企业官网</router-link>
+                <router-link to="/forum" class="dropdown-item">💬 论坛网站</router-link>
+                <router-link to="/education" class="dropdown-item">📚 教育网站</router-link>
+                <router-link to="/music" class="dropdown-item">🎵 音乐网站</router-link>
+                <router-link to="/fitness" class="dropdown-item">💪 健身网站</router-link>
+                <router-link to="/pet" class="dropdown-item">📱 科技网站</router-link>
+                <router-link to="/portfolio" class="dropdown-item">🎨 作品集</router-link>
+                <router-link to="/restaurant" class="dropdown-item">🍽️ 餐厅网站</router-link>
+                <router-link to="/travel" class="dropdown-item">✈️ 旅游网站</router-link>
+                <router-link to="/minimal" class="dropdown-item">⬜ 简约风格</router-link>
               </div>
             </div>
           </div>
@@ -196,6 +194,56 @@
   color: #ffffff !important;
   background: rgba(139, 92, 246, 0.15) !important;
   transform: translateX(8px) !important;
+}
+
+/* 下拉菜单样式 */
+.nav-dropdown {
+  position: relative !important;
+  display: inline-block;
+}
+
+.nav-dropdown-trigger {
+  cursor: pointer !important;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  width: 14rem;
+  background: rgba(26, 26, 46, 0.98) !important;
+  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.3) !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease !important;
+  z-index: 100 !important;
+  padding: 0.5rem 0;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block !important;
+  padding: 0.625rem 1rem !important;
+  color: #d1d5db !important;
+  font-size: 0.875rem !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.dropdown-item:hover {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.2) !important;
 }
 
 /* Blog 页面背景 */
