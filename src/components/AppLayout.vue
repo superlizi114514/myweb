@@ -41,28 +41,28 @@
             </router-link>
             
             <!-- 模板网站下拉菜单 -->
-            <div class="nav-dropdown">
-              <div class="nav-link nav-dropdown-trigger">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="nav-dropdown-wrapper">
+              <div class="nav-dropdown-btn">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
                 </svg>
-                <span>模板网站</span>
+                <span class="dropdown-btn-text">模板网站</span>
                 <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
               </div>
-              <div class="dropdown-menu">
-                <router-link to="/shopping" class="dropdown-item">🛒 购物网站</router-link>
-                <router-link to="/corporate" class="dropdown-item">🏢 企业官网</router-link>
-                <router-link to="/forum" class="dropdown-item">💬 论坛网站</router-link>
-                <router-link to="/education" class="dropdown-item">📚 教育网站</router-link>
-                <router-link to="/music" class="dropdown-item">🎵 音乐网站</router-link>
-                <router-link to="/fitness" class="dropdown-item">💪 健身网站</router-link>
-                <router-link to="/pet" class="dropdown-item">📱 科技网站</router-link>
-                <router-link to="/portfolio" class="dropdown-item">🎨 作品集</router-link>
-                <router-link to="/restaurant" class="dropdown-item">🍽️ 餐厅网站</router-link>
-                <router-link to="/travel" class="dropdown-item">✈️ 旅游网站</router-link>
-                <router-link to="/minimal" class="dropdown-item">⬜ 简约风格</router-link>
+              <div class="dropdown-menu-wrapper">
+                <router-link to="/shopping" class="dropdown-menu-item">🛒 购物网站</router-link>
+                <router-link to="/corporate" class="dropdown-menu-item">🏢 企业官网</router-link>
+                <router-link to="/forum" class="dropdown-menu-item">💬 论坛网站</router-link>
+                <router-link to="/education" class="dropdown-menu-item">📚 教育网站</router-link>
+                <router-link to="/music" class="dropdown-menu-item">🎵 音乐网站</router-link>
+                <router-link to="/fitness" class="dropdown-menu-item">💪 健身网站</router-link>
+                <router-link to="/pet" class="dropdown-menu-item">📱 科技网站</router-link>
+                <router-link to="/portfolio" class="dropdown-menu-item">🎨 作品集</router-link>
+                <router-link to="/restaurant" class="dropdown-menu-item">🍽️ 餐厅网站</router-link>
+                <router-link to="/travel" class="dropdown-menu-item">✈️ 旅游网站</router-link>
+                <router-link to="/minimal" class="dropdown-menu-item">⬜ 简约风格</router-link>
               </div>
             </div>
           </div>
@@ -196,17 +196,35 @@
   transform: translateX(8px) !important;
 }
 
-/* 下拉菜单样式 */
-.nav-dropdown {
+/* 下拉菜单样式 - 完全独立，不依赖 nav-link */
+.nav-dropdown-wrapper {
   position: relative !important;
   display: inline-block;
+  vertical-align: middle;
 }
 
-.nav-dropdown-trigger {
+.nav-dropdown-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  color: #9ca3af !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   cursor: pointer !important;
+  text-decoration: none !important;
 }
 
-.dropdown-menu {
+.nav-dropdown-btn:hover {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2) !important;
+}
+
+.dropdown-menu-wrapper {
   position: absolute !important;
   right: 0;
   top: 100%;
@@ -226,13 +244,13 @@
   overflow-y: auto;
 }
 
-.nav-dropdown:hover .dropdown-menu {
+.nav-dropdown-wrapper:hover .dropdown-menu-wrapper {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-.dropdown-item {
+.dropdown-menu-item {
   display: block !important;
   padding: 0.625rem 1rem !important;
   color: #d1d5db !important;
@@ -241,7 +259,7 @@
   transition: all 0.2s ease !important;
 }
 
-.dropdown-item:hover {
+.dropdown-menu-item:hover {
   color: #ffffff !important;
   background: rgba(139, 92, 246, 0.2) !important;
 }
