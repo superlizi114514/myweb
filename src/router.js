@@ -5,6 +5,7 @@ import Projects from './views/Projects.vue'
 import Blog from './views/Blog.vue'
 import Shop from './views/Shop.vue'
 import Templates from './views/Templates.vue'
+import UIShowcase from './views/UIShowcase.vue'
 import OpenClawDeploy from './views/OpenClawDeploy.vue'
 import WebsiteBuild from './views/WebsiteBuild.vue'
 import ContactInfo from './views/ContactInfo.vue'
@@ -29,6 +30,7 @@ const routes = [
   { path: '/blog', name: 'Blog', component: Blog },
   { path: '/shop', name: 'Shop', component: Shop },
   { path: '/templates', name: 'Templates', component: Templates },
+  { path: '/ui-showcase', name: 'UIShowcase', component: UIShowcase },
   { path: '/openclaw-deploy', name: 'OpenClawDeploy', component: OpenClawDeploy },
   { path: '/website-build', name: 'WebsiteBuild', component: WebsiteBuild },
   { path: '/contact-info', name: 'ContactInfo', component: ContactInfo },

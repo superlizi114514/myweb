@@ -9,6 +9,27 @@
         <p class="text-gray-400 text-lg">选择您喜欢的模板，快速搭建您的网站</p>
       </div>
 
+      <!-- UI Showcase Entry -->
+      <div class="mb-12">
+        <div class="ui-showcase-entry" @click="$router.push('/ui-showcase')">
+          <div class="entry-content">
+            <span class="entry-icon">✨</span>
+            <div class="entry-text">
+              <h3 class="entry-title">创意 UI 实验室</h3>
+              <p class="entry-desc">探索精致的交互组件 · 磁吸按钮 · 3D 表单 · 液态进度条 · 粒子效果</p>
+            </div>
+            <svg class="entry-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="entry-decoration">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Templates Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
@@ -158,6 +179,119 @@ export default {
 .templates-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+}
+
+/* UI Showcase Entry */
+.ui-showcase-entry {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(167, 139, 250, 0.1) 50%, rgba(244, 114, 182, 0.1) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(10px);
+}
+
+.ui-showcase-entry:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow:
+    0 20px 60px rgba(139, 92, 246, 0.25),
+    0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.entry-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.entry-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.5));
+}
+
+.entry-text {
+  flex: 1;
+}
+
+.entry-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.entry-desc {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.entry-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #a78bfa;
+  transition: transform 0.3s ease;
+}
+
+.ui-showcase-entry:hover .entry-arrow {
+  transform: translateX(8px);
+}
+
+.entry-decoration {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  background: #667eea;
+  top: -20px;
+  right: -20px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 80px;
+  height: 80px;
+  background: #a78bfa;
+  bottom: -10px;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  background: #f472b6;
+  top: 50%;
+  left: 60%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.1); }
 }
 
 .template-card {
