@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"E:\\\\项目总\\\\网站方案B（模板）\\\\myweb\" && npm run dev)",
+      "Bash(npx -y mcp__happy__change_title \"主页炫技效果升级\" 2>/dev/null || echo \"工具不可用\")"
+    ]
+  }
+}
