@@ -13,13 +13,13 @@
           <h1 class="text-5xl font-bold text-white">山信黑红榜</h1>
           <span class="text-5xl">🏆</span>
         </div>
-        <p class="text-xl text-gray-400 mb-4">山东信息职业技术学院红黑榜平台</p>
+        <p class="text-xl text-gray-400 mb-2">山东信息职业技术学院红黑榜平台</p>
+        <div class="inline-block bg-yellow-500/20 border border-yellow-500/40 rounded-full px-4 py-1 mb-4">
+          <span class="text-yellow-400 text-sm">⚠️ 仅展示，已暂停运营</span>
+        </div>
         <div class="flex justify-center gap-4 flex-wrap">
-          <a href="https://sxhh.online" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
-            🚀 立即访问
-          </a>
           <a href="https://github.com/superlizi114514/shanxin-heihongbang" target="_blank" class="inline-flex items-center gap-2 bg-[#2a2a3e] text-white px-6 py-3 rounded-full font-medium border border-white/10 hover:border-purple-500/50 transition-colors">
-            ⭐ GitHub
+            ⭐ 查看源代码
           </a>
         </div>
       </div>
@@ -133,30 +133,17 @@
         </div>
       </div>
 
-      <!-- Gallery -->
+      <!-- Project Introduction -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold text-white mb-8 text-center">项目截图</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] rounded-2xl overflow-hidden border border-purple-500/20">
-            <div class="aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 flex items-center justify-center">
-              <span class="text-gray-500">首页界面</span>
-            </div>
-          </div>
-          <div class="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] rounded-2xl overflow-hidden border border-purple-500/20">
-            <div class="aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 flex items-center justify-center">
-              <span class="text-gray-500">人员点评页</span>
-            </div>
-          </div>
-          <div class="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] rounded-2xl overflow-hidden border border-purple-500/20">
-            <div class="aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 flex items-center justify-center">
-              <span class="text-gray-500">排行榜页面</span>
-            </div>
-          </div>
-          <div class="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] rounded-2xl overflow-hidden border border-purple-500/20">
-            <div class="aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 flex items-center justify-center">
-              <span class="text-gray-500">管理后台</span>
-            </div>
-          </div>
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">项目介绍</h2>
+        <div class="bg-[#1a1a2e] rounded-xl p-8 border border-purple-500/10">
+          <p class="text-gray-300 text-lg leading-relaxed mb-4">
+            山信黑红榜是一个校园点评平台，为山东信息职业技术学院师生提供人员点评、商家评价、排行榜等互动功能。
+          </p>
+          <p class="text-gray-400 text-base leading-relaxed">
+            本项目采用前后端分离架构，前端使用 Vue3 + Vite + Vant UI，后端使用 Node.js + TypeScript，
+            数据库采用 Cloudflare D1 (SQLite)，图片存储使用 Vercel Blob。项目已暂停运营，此处仅作技术展示。
+          </p>
         </div>
       </div>
 
@@ -186,10 +173,8 @@
       <!-- Footer CTA -->
       <div class="text-center">
         <h2 class="text-2xl font-bold text-white mb-4">感兴趣吗？</h2>
+        <p class="text-gray-400 mb-6">查看源代码了解更多技术细节</p>
         <div class="flex justify-center gap-4 flex-wrap">
-          <a href="https://sxhh.online" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity">
-            🌐 访问线上版本
-          </a>
           <a href="https://github.com/superlizi114514/shanxin-heihongbang" target="_blank" class="inline-flex items-center gap-2 bg-[#2a2a3e] text-white px-8 py-4 rounded-full font-medium border border-white/10 hover:border-purple-500/50 transition-colors">
             📄 查看源代码
           </a>
