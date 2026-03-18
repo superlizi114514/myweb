@@ -72,7 +72,15 @@ export default {
           category: 'Web',
           link: '/website-build?from=projects'
         },
-
+        {
+          id: 3,
+          title: '山信黑红榜',
+          description: '山东信息职业技术学院红黑榜平台，支持人员/商家点评、点赞、排行榜、赞助系统、兑换码等功能',
+          image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
+          tags: ['Vue3', 'Node.js', 'Cloudflare D1', 'Vercel'],
+          category: 'Web',
+          link: '/shanxin-heihongbang?from=projects'
+        }
       ]
     }
   },

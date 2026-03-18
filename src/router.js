@@ -9,6 +9,7 @@ import UIShowcase from './views/UIShowcase.vue'
 import OpenClawDeploy from './views/OpenClawDeploy.vue'
 import WebsiteBuild from './views/WebsiteBuild.vue'
 import ContactInfo from './views/ContactInfo.vue'
+import ShanxinHeihongbang from './views/ShanxinHeihongbang.vue'
 
 // 模板网站页面
 import ShoppingTemplate from './views/templates/ShoppingTemplate.vue'
@@ -34,6 +35,7 @@ const routes = [
   { path: '/openclaw-deploy', name: 'OpenClawDeploy', component: OpenClawDeploy },
   { path: '/website-build', name: 'WebsiteBuild', component: WebsiteBuild },
   { path: '/contact-info', name: 'ContactInfo', component: ContactInfo },
+  { path: '/shanxin-heihongbang', name: 'ShanxinHeihongbang', component: ShanxinHeihongbang },
   
   // 模板网站子页面
   { path: '/shopping', name: 'Shopping', component: ShoppingTemplate },
