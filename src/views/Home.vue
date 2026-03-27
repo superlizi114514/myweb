@@ -67,18 +67,40 @@
           <router-link to="/about" class="btn btn-secondary">
             <span>关于我</span>
           </router-link>
-          <a href="/games/chENZE-game/index.html" target="_blank" class="btn btn-game">
+          <button @click="showGameDialog" class="btn btn-game">
             <svg class="btn-icon-sm" fill="currentColor" viewBox="0 0 24 24">
               <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0-2-.9-2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
             </svg>
             <span>开始游戏</span>
-          </a>
+          </button>
           <a href="https://v.douyin.com/di64-2AO-WM/" target="_blank" class="btn btn-glass">
             <svg class="btn-icon-sm" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
             </svg>
             <span>抖音</span>
           </a>
+        </div>
+
+        <!-- 游戏预加载对话框 -->
+        <div v-if="showDialog" class="dialog-overlay" @click="closeDialog">
+          <div class="dialog-content" @click.stop>
+            <h3 class="dialog-title">🎮 游戏加载提示</h3>
+            <p class="dialog-text">
+              游戏资源较大（约 380MB），首次加载可能需要一些时间。<br>
+              是否现在预加载游戏资源？
+            </p>
+            <div class="dialog-buttons">
+              <button @click="preloadAndOpen" class="dialog-btn primary">
+                <span v-if="!loading">是，预加载并打开</span>
+                <span v-else>加载中... {{ progress }}%</span>
+              </button>
+              <button @click="openDirect" class="dialog-btn secondary">否，直接打开</button>
+            </div>
+            <div v-if="loading" class="progress-bar">
+              <div class="progress-fill" :style="{ width: progress + '%' }"></div>
+            </div>
+            <p v-if="loading" class="progress-text">正在预加载资源，请稍候...</p>
+          </div>
         </div>
 
         <!-- Scroll Indicator -->
@@ -244,6 +266,11 @@ export default {
       mouseY: 0,
       particles: [],
       containerRef: null,
+      // 游戏对话框
+      showDialog: false,
+      loading: false,
+      progress: 0,
+      gameUrl: '/games/chENZE-game/index.html',
       featuredProjects: [
         {
           id: 1,
@@ -312,6 +339,80 @@ export default {
     if (this.terminalTimer) clearInterval(this.terminalTimer)
   },
   methods: {
+    // 游戏对话框方法
+    showGameDialog() {
+      this.showDialog = true
+      this.loading = false
+      this.progress = 0
+    },
+    closeDialog() {
+      this.showDialog = false
+    },
+    openDirect() {
+      window.open(this.gameUrl, '_blank')
+      this.closeDialog()
+    },
+    async preloadAndOpen() {
+      this.loading = true
+      this.progress = 0
+
+      try {
+        // 预加载主要资源
+        const resources = [
+          '/games/chENZE-game/assets/index-6863a3b8.js',
+          '/games/chENZE-game/assets/index-59bffd35.css',
+          '/games/chENZE-game/assets/index.es-c7c86e4e.js',
+          '/games/chENZE-game/assets/conentsCash-75763c1a.js',
+        ]
+
+        const loadedResources = []
+        const total = resources.length
+
+        for (let i = 0; i < resources.length; i++) {
+          try {
+            await this.loadResource(resources[i])
+            loadedResources.push(resources[i])
+            this.progress = Math.round(((i + 1) / total) * 100)
+          } catch (e) {
+            console.warn(`Failed to preload: ${resources[i]}`, e)
+          }
+        }
+
+        // 加载完成后打开游戏
+        window.open(this.gameUrl, '_blank')
+        this.closeDialog()
+      } catch (e) {
+        console.error('Preload error:', e)
+        // 即使出错也打开游戏
+        window.open(this.gameUrl, '_blank')
+        this.closeDialog()
+      }
+    },
+    async loadResource(url) {
+      return new Promise((resolve, reject) => {
+        const ext = url.split('.').pop()
+
+        if (ext === 'js') {
+          const script = document.createElement('script')
+          script.src = url
+          script.onload = resolve
+          script.onerror = reject
+          document.head.appendChild(script)
+        } else if (ext === 'css') {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          link.onload = resolve
+          link.onerror = reject
+          document.head.appendChild(link)
+        } else {
+          // 其他资源使用 fetch 预加载
+          fetch(url, { mode: 'no-cors' })
+            .then(() => resolve())
+            .catch(reject)
+        }
+      })
+    },
     handleMouseMove(e) {
       this.mouseX = e.clientX
       this.mouseY = e.clientY
@@ -1391,6 +1492,139 @@ export default {
 
   .cta-title {
     font-size: 1.5rem;
+  }
+}
+
+/* 游戏预加载对话框 */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dialog-content {
+  background: linear-gradient(135deg, rgba(30, 30, 46, 0.98) 0%, rgba(15, 15, 26, 0.98) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  max-width: 480px;
+  margin: 1.5rem;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(139, 92, 246, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dialog-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.dialog-text {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.dialog-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dialog-btn {
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.dialog-btn.primary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.dialog-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+.dialog-btn.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dialog-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dialog-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.progress-bar {
+  margin-top: 1.5rem;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 0.75rem;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .dialog-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .dialog-btn {
+    min-width: 140px;
   }
 }
 </style>
