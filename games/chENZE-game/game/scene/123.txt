@@ -1,0 +1,475 @@
+; 完蛋！我被陈泽传媒包围了
+; 序章:网吧偷钱（2012-2013，初二夏天）
+; 版本:v0.11
+
+; ============================================
+; 标题画面 - 声明界面
+; ============================================
+
+label:start;
+
+bgm:merry.mp3 -enter=1000;
+changeBg:black -next;
+:完蛋！我被陈泽传媒包围了 |内容均 AI 生成侵权联系删除|目前版本v0.13|;
+wait:duration=2;
+
+; ============================================
+; 序幕：自我介绍
+; ============================================
+
+label:序幕开始;
+
+; 初始化陈泽好感度
+setVar:chenze_fav=0;
+
+changeBg:中国地图.png -next;
+
+:我叫王女开。;
+:女开妍，是我名字的全称。;
+
+:今年 14 岁，黑龙江绥棱县人，初二。;
+:就是那种——在地图上得找半天才能找到的小地方。;
+
+changeBg:黑龙江地图.png;
+
+:绥棱，绥化的一个县。;
+:冬天冷得要命，夏天热得够呛。;
+:但这就是我的家乡。;
+
+changeBg:绥棱一中.jpg;
+
+:我在县里的初中读书。;
+:成绩中等，不算突出，但也说得过去。;
+:每天骑着自行车上下学，路过网吧时总会绕着走。;
+
+changeBg:学校门口.png;
+
+:妈妈说，女孩子要好好学习，将来考个好大学。;
+:爸爸说，女孩子要保护好自己，别被人欺负。;
+
+changeBg:black;
+
+:但那时的我还不知道——;
+:这个夏天，会遇到一个让我记一辈子的人。;
+
+:故事，就从那天开始。;
+
+ -sayPlaceHolder;
+wait:duration=1;
+
+
+; ============================================
+; 第一幕：摔完手机偶遇
+; ============================================
+
+changeBg:小区楼下·白天.png;
+playEffect:蝉鸣夏天.mp3 -id=蝉鸣;
+
+:初二那年夏天，我路过陈泽家楼下。;
+:突然，楼上传来一声巨响。;
+
+playEffect:摔手机.mp3;
+
+:是手机摔碎的声音。;
+:很响，电池都飞出来的那种。;
+
+changeFigure:小泽 愤怒.png -center;
+
+:紧接着，陈泽从单元门里冲了出来。;
+:他的眼睛红红的，手里攥着摔坏的手机。;
+
+陈泽:...;
+
+:他看到我，愣了一下。;
+changeFigure:小泽 低下头.png -next;
+:然后低下头，什么都不说。;
+
+:奶奶的怒吼声从楼上传来。;
+:但我听不清在喊什么。;
+
+; 【选择 1】
+choose:当做没听见:ignore|问他怎么了:ask;
+
+label:ignore;
+setVar:chenze_fav=chenze_fav+5; ; 好感度 +5
+
+:【陈泽好感度 +5 | 当前好感度：{chenze_fav}】;
+
+:我假装什么都没看到，准备离开。;
+陈泽:...;
+:他还是什么都没说。;
+changeFigure:none -center;
+jumpLabel:第二幕：网吧;
+
+label:ask;
+setVar:chenze_fav=chenze_fav-5; ; 好感度 -5
+
+:【陈泽好感度 -5 | 当前好感度：{chenze_fav}】;
+
+王女开:你没事吧？;
+changeFigure:小泽 愤怒.png -next;
+:他抬起头看了我一眼。;
+:又低下了头。;
+changeFigure:小泽 低下头.png -next;
+陈泽:不用你管。 -不用你管.mp3;
+:说完，他转身跑开了。;
+changeFigure:none -center;
+jumpLabel:第二幕：网吧;
+
+; ============================================
+; 第二幕：偷钱去网吧
+; ============================================
+
+label:第二幕：网吧;
+
+playEffect:none -id=蝉鸣;
+changeFigure:none;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeBg:网吧优化版2.png -next;
+
+:那天下午，我路过红蚂蚁网吧。;
+:当地最好的网吧，2 块钱一小时。;
+
+:我本来想进去借个充电宝。;
+:却在最里面的位置，看到了陈泽。;
+
+changeBg:网吧优化版2.png -next;
+playEffect:网吧键盘声.mp3 -id=keyboard;
+
+:他坐在电脑前，打着游戏。;
+:旁边桌子上，放着一个钱包，露出红色的钞票。;
+
+changeFigure:钱包（露出钞票）.png -right -transform={"scale":{"x":0.25,"y":0.25},"position":{"x":-150,"y":200}};
+changeFigure:小泽 玩电脑.png -center;
+
+wait:duration=0.1;
+
+:他余光扫到了我。;
+:手一抖，屏幕上的英雄被秒杀。;
+
+wait:duration=0.5;
+
+陈泽:我...我就来看看。 -我...我就来看看.mp3;
+
+:他慌忙关机，想藏起什么。;
+:但什么都没藏住。;
+
+王女开:我又跟你不熟，谁管你。 -我又跟你不熟，谁管你.mp3;
+
+:当他死的那一刻，伴随着音乐。;
+:折木奉太郎，拿下了五杀。;
+
+changeFigure:none -left;
+changeFigure:none -right;
+
+:那天在网吧，头一回看到他那么狼狈的样子。;
+
+playEffect:none -id=keyboard;
+
+; ============================================
+; 第三幕:楼下偶遇
+; ============================================
+
+changeFigure:none;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeBg:小区楼下 晚上.png;
+playEffect:蝉鸣夏天.mp3 -id=蝉鸣;
+
+:当晚，我在楼下又遇到了陈泽。;
+
+changeFigure:小泽 低头害羞.png -center;
+
+陈泽:那个...白天的事，你真不会说吧？ -那个...白天的事，你真不会说吧.mp3;
+
+王女开:...;
+
+陈泽:我奶知道了，得打死我。 -我奶知道了，得打死我。.mp3;
+
+:他耳朵红了。;
+:真的很红，像熟透的苹果。;
+
+; 【选择 1】
+choose:安慰他:安慰 | 调侃他:调侃;
+
+label:安慰;
+setVar:chenze_fav=chenze_fav+5;
+
+:【陈泽好感度 +5 | 当前好感度：{chenze_fav}】;
+
+changeFigure:小泽 思考 2.png -center;
+陈泽:谢谢你。 -谢谢你.mp3;
+jumpLabel:after_choice_1;
+
+label: 调侃;
+setVar:chenze_fav=chenze_fav+5;
+
+:【陈泽好感度 +5 | 当前好感度：{chenze_fav}】;
+陈泽:别啊！我真不知道咋办... -别啊！我真不知道咋办....mp3;
+jumpLabel:after_choice_1;
+
+label:after_choice_1;
+
+changeFigure:none;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+
+:他转身跑上楼，头也不回。;
+
+changeBg:black;
+
+; ============================================
+
+playEffect:none -id=蝉鸣;
+
+changeFigure:none;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeBg:家里电脑桌·夜晚.png;
+
+:几天后，我用家里的电脑登录 QQ。;
+:发现陈泽的头像变了。;
+
+:黑色背景，白色宋体字——'妍'。;
+:是我的名字里的字。;
+
+changeFigure:QQ 头像界面（妍字）.png -center -transform={"scale":{"x":0.35,"y":0.35},"position":{"x":0,"y":0}};
+
+:后来有人问陈泽，这头像什么意思。;
+:听传言说，有小混混也喜欢我。;
+:特意去找了陈泽。;
+:他是这么说的——;
+
+changeFigure:none -center;
+changeBg:网吧优化版 2.png -next;
+
+changeFigure:小泽 说话.png -center;
+
+陈泽:哥不是这样的。 -哥不是这样的。.mp3;
+陈泽:我看网上电视剧有个人叫妍，我挺喜欢她。 -我看网上电视剧有个人叫妍，我挺喜欢她。.mp3;
+陈泽:她长那么好看，能答应和我处对象吗？ -她长那么好看，能答应和我处对象吗.mp3;
+
+changeBg:black;
+
+; ============================================
+
+changeFigure:none;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeBg:小区楼下 晚上.png;
+
+:陈泽托人给我带话，说想去金色阳光 KTV 唱歌。;
+:问我有没有空。;
+
+changeBg:家里电脑桌·夜晚.png;
+
+playEffect:none -id=蝉鸣;
+
+:然后他打了电话。;
+:用家里的红色座机。;
+
+changeFigure:红色座机电话.png -right -transform={"scale":{"x":0.25,"y":0.25},"position":{"x":-50,"y":0}};
+
+妈妈:喂，哪位？;
+
+陈泽:阿姨，我是陈泽，王妍的同学。 -阿姨，我是陈泽，王妍的同学.mp3;
+陈泽:那个...周末有空吗？想去 KTV 唱歌。 -那个...周末有空吗？想去 KTV 唱歌.mp3;
+
+妈妈:不行，女孩子去那种地方干什么。;
+
+:妈妈拒绝了。;
+
+; 【选择 2】
+choose:帮陈泽说话:help|保持沉默:silent;
+
+label:help;
+setVar:chenze_fav=chenze_fav+5;
+
+:【陈泽好感度 +5 | 当前好感度：{chenze_fav}】;
+妈妈:真是的，那好吧，早点回来。;
+陈泽:谢谢阿姨！ -谢谢阿姨.mp3;
+jumpLabel:after_choice_2;
+
+label:silent;
+setVar:chenze_fav=chenze_fav-5;
+
+:【陈泽好感度 -5 | 当前好感度：{chenze_fav}】;
+陈泽:哦...好，阿姨再见。 -哦...好，阿姨再见.mp3;
+jumpLabel:after_choice_2;
+
+label:after_choice_2;
+
+changeFigure:none -right;
+changeBg:black;
+
+:那天下午，他把我喊道一个街头去。;
+
+; ============================================
+
+changeFigure:none;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeBg:小区后院黄昏.png;
+playEffect:蝉鸣夏天.mp3 -id=蝉鸣;
+
+:陈泽背着 Nike 山谷薄荷绿背包。;
+
+changeFigure:小泽 前背包.png -center;
+
+陈泽:妍... -妍.mp3;
+
+王女开:怎么了？;
+
+陈泽:'妍'...是你名字里的字。 -妍...是你名字里的字。.mp3;
+陈泽:我换这个头像，是因为... -我换这个头像，是因为.mp3;
+陈泽:我喜欢你。 -我喜欢你新.mp3 -fontSize=large;
+
+:路灯下，陈泽的脸很红。;
+:比那天耳朵还红。;
+
+陈泽:处对象不？ -处对象不.mp3;
+
+:我没说话。;
+:他的双目不敢正视我，不自觉的飘向天空。;
+
+陈泽:但我觉得这话必须得跟你说。 -但我觉得这话必须得跟你说.mp3;
+
+changeFigure:none -left;
+changeFigure:none -right;
+changeBg:black;
+
+playEffect:none -id=蝉鸣;
+
+:那天黄昏，他头一回说喜欢我。;
+:我答应了。;
+
+; ============================================
+; 第七幕:运动会见面
+; ============================================
+
+changeFigure:none;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeFigure:none -left;
+changeFigure:none -center;
+changeFigure:none -right;
+changeBg:学校操场·运动会.png;
+playEffect:蝉鸣夏天.mp3 -id=蝉鸣;
+
+:运动会那天，我说想吃东西。;
+:其实我只是想见他。;
+
+:我坐在操场旁边的台阶上。;
+:陈泽背着 Nike 背包去超市。;
+:买了 20 多块钱的膨化食品。;
+:全是我爱吃的。;
+
+:他回来了。;
+:把一包零食丢到我怀里。;
+
+:我低下头，默默地吃着薯片。;
+:阳光洒在他的背影上。;
+
+:过了一会儿，我吃完了。;
+:手里拿着空袋子。;
+
+changeBg:小区垃圾桶旁·夜晚.png;
+
+:我走到垃圾桶旁。;
+:看着我手里的背包。;
+
+; 好感度达到 15 才能选择无视垃圾桶
+jumpLabel:breakup -when=chenze_fav<15;
+choose:无视垃圾桶快步找陈泽:together|把包丢在一边:breakup;
+
+; ============================================
+; 分支结局
+; ============================================
+
+label:together;
+
+changeFigure:none -right;
+
+:我弯下腰，捡起了背包。;
+:拍了拍上面的灰。;
+
+王女开:傻子。;
+
+:我把空袋子扔进垃圾桶。;
+:背着他的包，跟了上去。;
+
+changeBg:black;
+
+playEffect:none -id=蝉鸣;
+
+:从那天起，我们一直在一起。;
+:从路灯下到 1103 分，从校服到婚纱。;
+
+:【最终好感度：{chenze_fav}】;
+
+jumpLabel:chapter1_sweetheart;
+
+label:breakup;
+
+changeFigure:none -right;
+
+:我弯下腰，捡起书包。;
+:扔进了垃圾桶。;
+
+王女开:...;
+
+:我转身走了。;
+:没有回头。;
+
+changeBg:black;
+
+playEffect:none -id=蝉鸣;
+
+:从那天起，我们分开了。;
+:直到 2026 年，才再次相遇。;
+
+:【最终好感度：{chenze_fav}】;
+
+jumpLabel:chapter1_breakup;
+
+label:chapter1_sweetheart;
+
+:【第一章 甜宠线 待开发】;
+jumpLabel:return_to_title;
+
+label:chapter1_breakup;
+
+:【第一章 分手线 待开发】;
+jumpLabel:return_to_title;
+
+label:return_to_title;
+
+stopBgm:none;
+:感谢试玩！;
+jumpLabel:序幕开始;
+
+end;
+changeFigure:选择立绘文件;

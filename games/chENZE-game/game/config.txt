@@ -1,0 +1,9 @@
+Game_name:完蛋！我被陈泽传媒包围了;
+Game_key:100e7de09747c4;
+Title_img:title_image.png;
+Title_bgm:yechiyoushengban.mp3;
+Textbox_theme:imss;
+Default_Language:zh_CN;
+Package_name:完蛋我被陈泽传媒包围了v0.13;
+Description:在另一条时间线，我是陈泽从小玩到大的好朋友，跟随他加入了陈泽传媒，陈泽传媒的人对我展开了猛烈的攻势;
+Game_Logo:陈泽传媒合照.png;

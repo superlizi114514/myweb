@@ -1,0 +1,21 @@
+{
+  "name": "完蛋！我被陈泽传媒包围了",
+  "short_name": "陈泽传媒",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "description": "完蛋！我被陈泽传媒包围了 - 序章：网吧偷钱",
+  "dir": "auto",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
