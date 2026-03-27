@@ -1,0 +1,9 @@
+/* ===== 对话框样式 - 恢复默认 ===== */
+
+/* 确保说话人名字容器显示 */
+.TextBox_showName {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
